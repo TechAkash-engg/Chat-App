@@ -1,0 +1,2233 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <<title>Athrv-Ed Chat App</title>
+	<link rel = "icon" href ="/static/mainicon.png" type = "image/x-icon">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.1/css/all.min.css">
+	<script type="text/javascript" src="Scripts/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+    <style>
+ @media screen and (max-width: 1366px){
+
+div#overflowTest {
+    height: 200px;
+}
+div.faq{
+position:relative;
+left:54px;
+}
+div#report_box {
+    top: -67px;
+    left: 10px;
+    position: relative;
+}
+
+div#arrow_back {
+    top: 18px;
+    left: -52px;
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+div.modal-dialog {
+    position: absolute !important;
+    left: 393px;
+    top: 143px;
+}
+}
+@media screen and (min-width:1380px) and (max-width: 1800px){
+div#overflowTest {
+    height: 377px;
+}
+div.faq{
+position:relative;
+left:139px;
+}
+
+div#report_box {
+    top: 90px;
+    left: 17px;
+    position: relative;
+}
+div.modal-dialog{
+    left: 437px;
+    top: 250px;
+    position: absolute !important;
+}
+div#arrow_back {
+    top: 18px;
+    left: -138px;
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+}
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 0 !important;
+    color: #333;
+    background-color: #fff;
+    overflow: hidden;
+}
+#overflowTest {
+    color: white;
+    padding: 15px;
+    opacity: 0.6;
+    top: -156px;
+    left: 0px;
+    overflow-x: hidden;
+    width: 480px;
+    height: 506px;
+    background: #242526;
+    position: relative;
+    left: 396px;
+    overflow-y: scroll;
+	overflow-x: hidden;
+	scrollbar-color: #2D3032 #222629;
+	scrollbar-width: thin;
+	line-height: 1.42857143;
+}
+
+#how_to_sign_out_from_the_app_ {
+	top: 9px;
+	left: 8px;
+	width: 408px;
+	height: 32px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: left;
+	color:#ffffff;;
+    padding: 7px;;
+}
+
+#group_98 {
+	top: 284px;
+	left: 8px;
+	width: 418px;
+	height: 50px;
+    padding: 5px;
+}
+#group_7 {
+	top: 0px;
+	left: 0px;
+	width: 418px;
+	height: 40px;
+}
+#rectangle_2 {
+	top: 0px;
+	left: 0px;
+	width: 420px;
+	height: 42px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #222629;
+	background:rgba(45,48,50,1);
+}
+#how_to_reset_your_password_ {
+	top: 9px;
+	left: 8px;
+	width: 408px;
+	height: 32px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: left;
+	color:#ffffff;
+    padding: 7px;
+}
+#group_97 {
+	top: 280px;
+	left: 8px;
+	width: 418px;
+	height: 50px;
+    padding: 5px;
+}
+#group_7_ek1 {
+	top: 0px;
+	left: 0px;
+	width: 418px;
+	height: 40px;
+}
+
+#rectangle_2_ek1 {
+	top: 0px;
+	left: 0px;
+	width: 420px;
+	height: 42px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #222629;
+	background:rgba(45,48,50,1);
+}
+
+#how_to_create_your_group_ {
+	top: 9px;
+	left: 8px;
+	width: 408px;
+	height: 32px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: left;
+	color:#ffffff;
+	padding: 7px;
+}
+#group_32 {
+	top: 28px;
+	left: 8px;
+	width: 418px;
+	height: 50px;
+	padding: 5px;
+}
+#group_6 {
+	top: 0px;
+	left: 0px;
+	width: 418px;
+	height: 40px;
+}
+
+#rectangle_2_ek6 {
+	top: 0px;
+	left: 0px;
+	width: 420px;
+	height: 42px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #222629;
+	background:rgba(45,48,50,1);
+}
+
+#how_to_edit_group_profile_ {
+	top: 9px;
+	left: 8px;
+	width: 408px;
+	height: 32px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: left;
+	color:#ffffff;
+	padding: 7px;
+}
+
+#group_33 {
+	top: 92px;
+	left: 8px;
+	width: 418px;
+	height: 50px;
+	padding: 5px;
+}
+#group_7_ek6 {
+	top: 0px;
+	left: 0px;
+	width: 418px;
+	height: 40px;
+}
+
+#rectangle_2_ek7 {
+	top: 0px;
+	left: 0px;
+	width: 420px;
+	height: 42px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #222629;
+	background:rgba(45,48,50,1);
+}
+
+#how_to_manage_members_in_group_ {
+	top: 9px;
+	left: 8px;
+	width: 408px;
+	height: 32px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: left;
+	color:#ffffff;
+	padding: 7px;
+}
+#group_96 {
+	top: 156px;
+	left: 8px;
+	width: 418px;
+	height: 50px;
+	padding: 5px;
+}
+#group_7_ek7 {
+	top: 0px;
+	left: 0px;
+	width: 418px;
+	height: 40px;
+}
+
+#rectangle_2_ek8 {
+	top: 0px;
+	left: 0px;
+	width: 420px;
+	height: 42px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #222629;
+	background:rgba(45,48,50,1);
+}
+
+#can_we_have_a_personal_chat_using_chatapp_{
+	top: 9px;
+	left: 8px;
+	width: 408px;
+	height: 32px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: left;
+	color:#ffffff;
+	padding: 7px;
+}
+#group_95 {
+	top: 156px;
+	left: 8px;
+	width: 418px;
+	height: 50px;
+	padding: 5px;
+}
+#group_95_ek {
+	top: 0px;
+	left: 0px;
+	width: 418px;
+	height: 40px;
+}
+
+#rectangle_95_ek {
+	top: 0px;
+	left: 0px;
+	width: 420px;
+	height: 42px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #222629;
+	background:rgba(45,48,50,1);
+}
+
+#not_able_to_register_for_chatapp_{
+	top: 9px;
+	left: 8px;
+	width: 408px;
+	height: 32px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: left;
+	color:#ffffff;
+	padding: 7px;
+}
+#group_94 {
+	top: 156px;
+	left: 8px;
+	width: 418px;
+	height: 50px;
+	padding: 5px;
+}
+#group_94_ek {
+	top: 0px;
+	left: 0px;
+	width: 418px;
+	height: 40px;
+}
+
+#rectangle_94_ek {
+	top: 0px;
+	left: 0px;
+	width: 420px;
+	height: 42px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #222629;
+	background:rgba(45,48,50,1);
+}
+#how_to_know_if_a_member_is_online_or_not_{
+	top: 9px;
+	left: 8px;
+	width: 408px;
+	height: 32px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: left;
+	color:#ffffff;
+	padding: 7px;
+}
+#group_93 {
+	top: 156px;
+	left: 8px;
+	width: 418px;
+	height: 50px;
+	padding: 5px;
+}
+#group_93_ek {
+	top: 0px;
+	left: 0px;
+	width: 418px;
+	height: 40px;
+}
+
+#rectangle_93_ek {
+	top: 0px;
+	left: 0px;
+	width: 420px;
+	height: 42px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #222629;
+	background:rgba(45,48,50,1);
+}
+#how_to_check_if_im_an_admin_or_not_{
+	top: 9px;
+	left: 8px;
+	width: 408px;
+	height: 32px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: left;
+	color:#ffffff;
+	padding: 7px;
+}
+#group_92 {
+	top: 156px;
+	left: 8px;
+	width: 418px;
+	height: 50px;
+	padding: 5px;
+}
+#group_92_ek {
+	top: 0px;
+	left: 0px;
+	width: 418px;
+	height: 40px;
+}
+
+#rectangle_92_ek {
+	top: 0px;
+	left: 0px;
+	width: 420px;
+	height: 42px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #222629;
+	background:rgba(45,48,50,1);
+}
+#how_to_give_line_breaks_to_text_messages_{
+	top: 9px;
+	left: 8px;
+	width: 408px;
+	height: 32px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: left;
+	color:#ffffff;
+	padding: 7px;
+}
+#group_91 {
+	top: 156px;
+	left: 8px;
+	width: 418px;
+	height: 50px;
+	padding: 5px;
+}
+#group_91_ek {
+	top: 0px;
+	left: 0px;
+	width: 418px;
+	height: 40px;
+}
+
+#rectangle_91_ek {
+	top: 0px;
+	left: 0px;
+	width: 420px;
+	height: 42px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #222629;
+	background:rgba(45,48,50,1);
+}
+#not_getting_any_notifications_{
+	top: 9px;
+	left: 8px;
+	width: 408px;
+	height: 32px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: left;
+	color:#ffffff;
+	padding: 7px;
+}
+#group_90 {
+	top: 156px;
+	left: 8px;
+	width: 418px;
+	height: 50px;
+	padding: 5px;
+}
+#group_90_ek {
+	top: 0px;
+	left: 0px;
+	width: 418px;
+	height: 40px;
+}
+
+#rectangle_90_ek {
+	top: 0px;
+	left: 0px;
+	width: 420px;
+	height: 42px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #222629;
+	background:rgba(45,48,50,1);
+}
+#not_able_to_upload_the_group_pic_{
+	top: 9px;
+	left: 8px;
+	width: 408px;
+	height: 32px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: left;
+	color:#ffffff;
+	padding: 7px;
+}
+#group_89 {
+	top: 156px;
+	left: 8px;
+	width: 418px;
+	height: 50px;
+	padding: 5px;
+}
+#group_89_ek {
+	top: 0px;
+	left: 0px;
+	width: 418px;
+	height: 40px;
+}
+
+#rectangle_89_ek {
+	top: 0px;
+	left: 0px;
+	width: 420px;
+	height: 42px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #222629;
+	background:rgba(45,48,50,1);
+}
+#im_getting_room_not_found_error_{
+	top: 9px;
+	left: 8px;
+	width: 408px;
+	height: 32px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: left;
+	color:#ffffff;;
+	padding: 7px;
+}
+#group_88 {
+	top: 156px;
+	left: 8px;
+	width: 418px;
+	height: 50px;
+	padding: 5px;
+}
+#group_88_ek {
+	top: 0px;
+	left: 0px;
+	width: 418px;
+	height: 40px;
+}
+
+#rectangle_88_ek {
+	top: 0px;
+	left: 0px;
+	width: 420px;
+	height: 42px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #222629;
+	background:rgba(45,48,50,1);
+}
+#not_able_to_edit_the_group_{
+	top: 9px;
+	left: 8px;
+	width: 408px;
+	height: 32px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: left;
+	color:#ffffff;
+	padding: 7px;
+}
+#group_87 {
+	top: 156px;
+	left: 8px;
+	width: 418px;
+	height: 50px;
+	padding: 5px;
+}
+#group_87_ek {
+	top: 0px;
+	left: 0px;
+	width: 418px;
+	height: 40px;
+}
+
+#rectangle_87_ek {
+	top: 0px;
+	left: 0px;
+	width: 420px;
+	height: 42px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #222629;
+	background:rgba(45,48,50,1);
+}
+#not_able_to_find_members_names_in_the_create_group_list_{
+	top: 9px;
+	left: 8px;
+	width: 408px;
+	height: 32px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 12.5px;
+	font-weight: 600;
+	text-align: left;
+	color:#ffffff;
+	padding: 7px;
+}
+#group_86 {
+	top: 156px;
+	left: 8px;
+	width: 418px;
+	height: 50px;
+	padding: 5px;
+}
+#group_86_ek {
+	top: 0px;
+	left: 0px;
+	width: 418px;
+	height: 40px;
+}
+
+#rectangle_86_ek {
+	top: 0px;
+	left: 0px;
+	width: 420px;
+	height: 42px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #222629;
+	background:rgba(45,48,50,1);
+}
+#which_is_the_best_suitable_browser_for_chatapp_{
+	top: 9px;
+	left: 8px;
+	width: 408px;
+	height: 32px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: left;
+	color:#ffffff;
+	padding: 7px;
+}
+#group_85 {
+	top: 156px;
+	left: 8px;
+	width: 418px;
+	height: 50px;
+	padding: 5px;
+}
+#group_85_ek {
+	top: 0px;
+	left: 0px;
+	width: 418px;
+	height: 40px;
+}
+
+#rectangle_85_ek {
+	top: 0px;
+	left: 0px;
+	width: 420px;
+	height: 42px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #222629;
+	background:rgba(45,48,50,1);
+}
+#is_it_compulsory_to_upload_a_profile_and_group_pic_{
+	top: 9px;
+	left: 8px;
+	width: 408px;
+	height: 32px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: left;
+	color:#ffffff;
+	padding: 7px;
+}
+#group_84 {
+	top: 156px;
+	left: 8px;
+	width: 418px;
+	height: 50px;
+	padding: 5px;
+}
+#group_84_ek {
+	top: 0px;
+	left: 0px;
+	width: 418px;
+	height: 40px;
+}
+
+#rectangle_84_ek {
+	top: 0px;
+	left: 0px;
+	width: 420px;
+	height: 42px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #222629;
+	background:rgba(45,48,50,1);
+}
+#i_want_to_change_my_profile_pic_{
+	top: 9px;
+	left: 8px;
+	width: 408px;
+	height: 32px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: left;
+	color:#ffffff;
+	padding: 7px;
+}
+#group_83 {
+	top: 156px;
+	left: 8px;
+	width: 418px;
+	height: 50px;
+	padding: 5px;
+}
+#group_83_ek {
+	top: 0px;
+	left: 0px;
+	width: 418px;
+	height: 40px;
+}
+
+#rectangle_83_ek {
+	top: 0px;
+	left: 0px;
+	width: 420px;
+	height: 42px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #222629;
+	background:rgba(45,48,50,1);
+}
+#messages_not_getting_sent_{
+	top: 9px;
+	left: 8px;
+	width: 408px;
+	height: 32px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: left;
+	color:#ffffff;
+	padding: 7px;
+}
+#group_82 {
+	top: 156px;
+	left: 8px;
+	width: 418px;
+	height: 50px;
+	padding: 5px;
+}
+#group_82_ek {
+	top: 0px;
+	left: 0px;
+	width: 418px;
+	height: 40px;
+}
+
+#rectangle_82_ek {
+	top: 0px;
+	left: 0px;
+	width: 420px;
+	height: 42px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #222629;
+	background:rgba(45,48,50,1);
+}
+#screen_resolution_problems_{
+	top: 9px;
+	left: 8px;
+	width: 408px;
+	height: 32px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: left;
+	color:#ffffff;
+	padding: 7px;
+}
+#group_81 {
+	top: 156px;
+	left: 8px;
+	width: 418px;
+	height: 50px;
+	padding: 5px;
+}
+#group_81_ek {
+	top: 0px;
+	left: 0px;
+	width: 418px;
+	height: 40px;
+}
+
+#rectangle_81_ek {
+	top: 0px;
+	left: 0px;
+	width: 420px;
+	height: 42px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #222629;
+	background:rgba(45,48,50,1);
+}
+#can_we_share_links_or_urls_{
+	top: 9px;
+	left: 8px;
+	width: 408px;
+	height: 32px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: left;
+	color:#ffffff;
+	padding: 7px;
+}
+#Edit_room_changes_not_getting_reflected_{
+	top: 9px;
+	left: 8px;
+	width: 408px;
+	height: 32px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: left;
+	color:#ffffff;
+	padding: 7px;
+}
+#group_80 {
+	top: 156px;
+	left: 8px;
+	width: 418px;
+	height: 50px;
+	padding: 5px;
+}
+#group_80_ek {
+	top: 0px;
+	left: 0px;
+	width: 418px;
+	height: 40px;
+}
+
+#rectangle_80_ek {
+	top: 0px;
+	left: 0px;
+	width: 420px;
+	height: 42px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #222629;
+	background:rgba(45,48,50,1);
+}
+#group_50 {
+	top: 156px;
+	left: 8px;
+	width: 418px;
+	height: 50px;
+	padding: 5px;
+}
+#group_50_ek {
+	top: 0px;
+	left: 0px;
+	width: 418px;
+	height: 40px;
+}
+
+#rectangle_50_ek {
+	top: 0px;
+	left: 0px;
+	width: 420px;
+	height: 42px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #222629;
+	background:rgba(45,48,50,1);
+}
+#other_problems_{
+	top: 9px;
+	left: 8px;
+	width: 408px;
+	height: 32px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: left;
+	color:#ffffff;
+	padding: 7px;
+}
+#group_79 {
+	top: 156px;
+	left: 8px;
+	width: 418px;
+	height: 50px;
+	padding: 5px;
+}
+#group_79_ek {
+	top: 0px;
+	left: 0px;
+	width: 418px;
+	height: 40px;
+}
+
+#rectangle_79_ek {
+	top: 0px;
+	left: 0px;
+	width: 420px;
+	height: 42px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #222629;
+	background:rgba(45,48,50,1);
+}
+.dropdown_arrow{
+	width: 20px;
+	height: 20px;
+
+}
+.keyboard_arrow_down {
+	top: -21px;
+	left: 376px;
+	width: 24px;
+	height: 24px;
+	position: relative;
+}
+#details_box {
+	width: 830px;
+	height: 250px;
+	background: #2d3032;
+	position: relative;
+	left: 233px;
+}
+#details_text {
+	left: 70px;
+	top: 70px;
+	font-size: large;
+	color: #EEF2F4;
+	position: relative;
+}
+#close_cross {
+	position: relative;
+	left: 787px;
+	top: 15px;
+}
+#contact_details_box {
+	width: 230px;
+	height: 95px;
+	position: relative;
+	left: 320px;
+	top: 125px;
+	line-height: 1.42857143;
+}
+#contact_details{
+	font-size: large;
+	color: #ffffff;
+	position: relative;
+}
+.btn-secondary:hover {
+color: rgb(0, 0, 0);
+background-color: rgba(45,48,50,1);
+border-color: rgba(45,48,50,1);
+}
+
+.btn-secondary {
+background-color:rgba(45,48,50,1);
+border-color:rgba(45,48,50,1);
+}
+.dropdown, .dropleft, .dropright, .dropup {
+    position: relative;
+    left: -5px;
+    top: -4px;
+}
+#collapse1{
+	background: transparent;
+	width: 450px;
+left: -9px;
+position: relative;
+}
+#collapse2{
+	background: transparent;
+	width: 450px;
+left: -9px;
+position: relative;
+}
+#collapse3{
+	background: transparent;
+	width: 450px;
+left: -9px;
+position: relative;
+}
+#collapse4{
+	background: transparent;
+	width: 450px;
+left: -9px;
+position: relative;
+}
+#collapse5{
+	background: transparent;
+	width: 450px;
+left: -9px;
+position: relative;
+}
+#collapse6{
+	background: transparent;
+	width: 450px;
+left: -9px;
+position: relative;
+}
+#collapse7{
+	background: transparent;
+	width: 450px;
+left: -9px;
+position: relative;
+}
+#collapse8{
+	background: transparent;
+	width: 450px;
+left: -9px;
+position: relative;
+}
+#collapse9{
+	background: transparent;
+	width: 450px;
+left: -9px;
+position: relative;
+}
+#collapse10{
+	background: transparent;
+	width: 450px;
+left: -9px;
+position: relative;
+}
+#collapse11{
+	background: transparent;
+	width: 450px;
+left: -9px;
+position: relative;
+}
+#collapse12{
+	background: transparent;
+	width: 450px;
+left: -9px;
+position: relative;
+}
+#collapse13{
+	background: transparent;
+	width: 450px;
+left: -9px;
+position: relative;
+}
+#collapse14{
+	background: transparent;
+	width: 450px;
+left: -9px;
+position: relative;
+}
+#collapse15{
+	background: transparent;
+	width: 450px;
+left: -9px;
+position: relative;
+}
+#collapse16{
+	background: transparent;
+	width: 450px;
+left: -9px;
+position: relative;
+}
+#collapse17{
+	background: transparent;
+	width: 450px;
+left: -9px;
+position: relative;
+}
+#collapse18{
+	background: transparent;
+	width: 450px;
+left: -9px;
+position: relative;
+}
+#collapse19{
+	background: transparent;
+	width: 450px;
+left: -9px;
+position: relative;
+}
+#collapse20{
+	background: transparent;
+	width: 450px;
+left: -9px;
+position: relative;
+}
+#collapse21{
+	background: transparent;
+	width: 450px;
+left: -9px;
+position: relative;
+}
+#collapse22{
+	background: transparent;
+	width: 450px;
+left: -9px;
+position: relative;
+}
+#collapse23{
+	background: transparent;
+	width: 450px;
+left: -9px;
+position: relative;
+}
+.panel {
+    margin-bottom: 20px;
+    background-color: #242526 !important;
+    border-radius: 4px;
+	border: none !important;
+}
+.panel-default {
+     border-color: #242526 !important;
+}
+.panel-group .panel-heading {
+    border-bottom: 0;
+}
+.panel-heading {
+    padding: 1px 5px !important;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+}
+.content_box{
+	background: rgba(45,48,50,1);
+	padding: 7px;
+	border-radius: 5px;
+}
+.btn-primary {
+    color: #fff;
+    background: linear-gradient(
+	-135.25747173575deg
+ , rgba(24,115,181,1) 0%, rgba(51,159,237,1) 100%) !important;
+    border-color: #2e6da4;
+    left: 700px;
+    position: relative;
+    top: 260px;
+	width: 120px;
+    height: 50px;
+	border-radius: 8px !important;
+}
+.btn {
+	font-size: 19px  !important;
+	font-weight: 900  !important;
+	border: none !important;
+	background: linear-gradient(
+	-135.25747173575deg
+ , rgba(24,115,181,1) 0%, rgba(51,159,237,1) 100%);
+}
+.modal-content {
+    position: relative;
+	left: -130px !important;
+	width: 855px;
+    height: 243px;
+    background-color: rgb(21, 21, 21) !important;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+    -webkit-box-shadow: 0 3px 9px rgb(0 0 0 / 50%);
+    outline: 0;
+}
+.close {
+ position: relative;
+ left: 363px;
+ top: 20px;
+}
+
+.dropdown1 {
+    position: relative;
+    left: 28px;
+    top: 0px;
+	width: 20px;
+}
+#vector_ek10 {
+	top: 0px;
+	left: 0px;
+	width: 30px;
+	height: 30px;
+}
+#arrow_back {
+	top: 18px;
+	left: -276px;
+	position: relative;
+	width: 30px;
+	height: 30px;
+}
+#arrow_back_background{
+	top: -194px;
+	left: 20px;
+	position:relative;
+	background: transparent;
+}
+#rectangle_1 {
+	top: 214px;
+	left: 0px;
+	width: 100%;
+	height: 214px;
+}
+
+
+#we_are_here_to_assist {
+	top: -177px;
+    left: 435px;
+	position: relative;
+	width: 409px;
+	height: 81px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 40px;
+	font-weight: bold;
+	text-align: left;
+	color:#EEF2F4;
+}
+
+
+#didn_t_find_the_answer_ {
+	top: 221px;
+    left: 530px;
+    position: relative;
+	width: 171px;
+	height: 32px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 16px;
+	text-align: left;
+	color:#FFFFFF;
+}
+#group_122 {
+	top: 0px;
+	left: px;
+	width: 100%;
+	height: 663px;
+	line-height: 1.42857143;
+}
+#_bg__faq_2 {
+	top: 0px;
+	width: 100%;
+height: 100%;
+	background: rgba(36,37,38,1);
+position: relative;
+overflow:hidden;
+}
+#frame_32 {
+	top: -174px;
+	position: relative;
+	left: 413px;
+	width: 410px;
+	height: 41px;
+}
+
+
+
+
+#group_951 {
+	top: 0px;
+	left: -9px;
+	width: 416px;
+	height: 41px;
+	position: relative;
+	left: 4px;
+}
+
+#rectangle_70 {
+	top: 0px;
+	left: 0px;
+	width: 416px;
+	height: 41px;
+	-ms-border-radius: 24px;
+	-o-border-radius: 24px;
+	-moz-border-radius: 24px;
+	-webkit-border-radius: 24px;
+	border-radius: 24px;
+	background:rgba(45,48,50,1);
+}
+
+#search_bar {
+	top: 9px;
+	left: 16px;
+	width: 195px;
+	height: 23px;
+}
+#group_77 {
+	top: 0px;
+	left: 0px;
+	width: 195px;
+	height: 23px;
+}
+#search {
+	top: -7px;
+    left: 17px;
+    position: relative;
+	width: 21.13px;
+	height: 21px;
+}
+
+#vector_ek12 {
+	top: 0px;
+	left: 0px;
+	width: 21.13px;
+	height: 21px;
+}
+
+
+#vector_ek13 {
+	top: 2.63px;
+	left: 2.64px;
+	width: 15.4px;
+	height: 15.3px;
+}
+
+
+#search_your_query_here {
+	top: -16px;
+    left: 40px;
+    position: relative;
+    width: 335px;
+    height: 32px;
+    overflow: hidden;
+    font-family: Segoe UI;
+    font-size: 16px;
+    text-align: left;
+	border: 0;
+	color: #fff;
+	outline:none!important;
+    background-color: transparent;
+}
+#report_box{
+	top: 249px;
+    left: 10px;
+	position: relative;
+	line-height: 1.42857143;
+}
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#myUL li a {
+	top: 9px;
+	left: 8px;
+	width: 408px;
+	height: 32px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 15px;
+	font-weight: 600;
+	text-align: left;
+	color:#ffffff;;
+    padding: 7px;;
+}
+
+.modal-dialog {
+ position: absolute !important;
+ left: 600px;
+ top: 291px;
+}
+.faq{
+position:relative;
+left:300px;
+}
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+button:not(:disabled) {
+ outline: 0 !important;
+}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div id="_bg__faq_2"  >
+
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+
+		  	  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">  	<img src="{{url_for('static',filename='cross.png')}}" class="dropdown1"/></span></button>
+			<div id="details_text">
+				Please contact the email-id mentioned below for any issues which are not addressed in FAQ
+			</div>
+			<div id="contact_details_box">
+				<div id="contact_details">
+					<p>nidishnrao@gmail.com</p> <br>
+
+					<p>akashrajpbhat@gmail.com</p>
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
+
+
+	<div id="group_122"  >
+		<img src="{{url_for('static',filename='rectangle_1.png')}}" id="rectangle_1" />
+	<div class="FAQ">
+		<div id="arrow_back"  >
+            <a href="{{url_for('home')}}">
+			<div id="arrow_back_background">
+				<img src="{{url_for('static',filename='_vector_ek11.png')}}" id="vector_ek10" />
+			</div></a>
+		</div>
+		<div id="we_are_here_to_assist" >
+			We are here to assist
+		</div>
+		<div id="report_box">
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+			Report
+		  </button>
+		<div id="didn_t_find_the_answer_" >
+			Didn't find the answer?
+		</div>
+		</div>
+		<div id="frame_32"  >
+			<div id="group_95"  >
+				<div id="rectangle_70"  >
+				<div id="search_bar"  >
+					<div id="group_77"  >
+						<div id="search"  >
+							<img src="{{url_for('static',filename='vector_ek12.png')}}" id="vector_ek12" />
+							<img src="{{url_for('static',filename='vector_ek13.png')}}" id="vector_ek13" />
+						</div>
+						<input type="text" id="search_your_query_here" onkeyup="myFunction()" placeholder="Search your query here" title="Type your query">
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+		<div id="overflowTest"  >
+			<ul id="myUL">
+			<div class="panel-group" id="accordion">
+			<div class="panel panel-default">
+				<li>
+				<div id="group_98"  >
+					<div id="group_7"  >
+						<div id="rectangle_2"  >
+							<div class="panel-heading">
+							<div id="how_to_sign_out_from_the_app_" >
+								<a>How to Sign out from the app?</a>
+
+							</div>
+							<div class="keyboard_arrow_down" >
+								<img src="{{url_for('static',filename='dropdown.png')}}" class="dropdown_arrow" data-toggle="collapse" data-parent="#accordion" href="#collapse1"/>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div id="collapse1" class="panel-collapse collapse ">
+					<div class="panel-body">
+						<div class="content_box">
+							Go to home page<br>>click on ‘settings’ on top right side<br>>select ‘signout'
+						</div>
+					</div>
+				</div>
+			</li>
+			</div>
+
+			<div class="panel panel-default">
+			<li>
+			<div id="group_97"  >
+				<div id="group_7_ek1"  >
+					<div id="rectangle_2_ek1"  >
+						<div class="panel-heading">
+						<div id="how_to_reset_your_password_" >
+							<a>How to reset your password?</a>
+						</div>
+						<div class="keyboard_arrow_down" >
+							<img src="{{url_for('static',filename='dropdown.png')}}" class="dropdown_arrow" data-toggle="collapse" data-parent="#accordion" href="#collapse2"/>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+			<div id="collapse2" class="panel-collapse collapse ">
+				<div class="panel-body">
+					<div class="content_box">
+						In the login page click on the forgot password option….
+						<br>>enter the registered Athrv-ed mail-id
+						<br>>click on ‘submit’
+						<br>>check your mail inbox and open a mail from athrvservices
+						<br>>click on the link provided which will redirect you to the new reset password page.
+						<br>>set your new password here,and click on ‘submit’
+						<br>> your password is successfully updated, try login again with new password.
+						<br>>time limit for reset password is 10mins from you getting the mail
+
+					</div>
+				</div>
+			</div>
+			</li>
+			</div>
+			<div class="panel panel-default">
+			<li>
+				<div id="group_32"  >
+					<div id="group_6"  >
+						<div id="rectangle_2_ek6"  >
+							<div class="panel-heading">
+							<div id="how_to_create_your_group_" >
+								<a>How to create your group?</a>
+							</div>
+							<div class="keyboard_arrow_down" >
+								<img src="{{url_for('static',filename='dropdown.png')}}" class="dropdown_arrow" data-toggle="collapse" data-parent="#accordion" href="#collapse3"/>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div id="collapse3" class="panel-collapse collapse ">
+					<div class="panel-body">
+						<div class="content_box">
+							Go to home page<br>>click on ‘+’ on left top<br>>give the group name<br>>select the members->upload a group pic<br>
+							Tada!! Your new group created successfully.
+						</div>
+					</div>
+				</div>
+			</li>
+			</div>
+			<div class="panel panel-default">
+			<li>
+				<div id="group_33"  >
+					<div id="group_7_ek6"  >
+						<div id="rectangle_2_ek7"  >
+							<div class="panel-heading">
+							<div id="how_to_edit_group_profile_" >
+								<a>How to edit a group profile?	</a>
+							</div>
+							<div class="keyboard_arrow_down" >
+								<img src="{{url_for('static',filename='dropdown.png')}}" class="dropdown_arrow" data-toggle="collapse" data-parent="#accordion" href="#collapse4"/>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div id="collapse4" class="panel-collapse collapse ">
+					<div class="panel-body">
+						<div class="content_box">
+							Goto the group that you want to edit->click on group title at top-> edit group page will appear->members list will appear<br>
+							1. You can change the group name by simply typing new group name<br>
+							2. Click on the group pic if you want to upload a new group image.<br>
+							3. Click on ‘update’ to successfully edit your group after all changes.<br>
+							4. Click on ‘delete group’ if you want to delete that particular group permanently.<br>
+							Yo!!!! Group is updated
+						</div>
+					</div>
+				</div>
+			</li>
+			</div>
+			<div class="panel panel-default">
+			<li>
+				<div id="group_96"  >
+					<div id="group_7_ek7"  >
+						<div id="rectangle_2_ek8"  >
+							<div class="panel-heading">
+							<div id="how_to_manage_members_in_group_" >
+								<a>How to manage members in group?	</a>
+							</div>
+							<div class="keyboard_arrow_down" >
+								<img src="{{url_for('static',filename='dropdown.png')}}" class="dropdown_arrow" data-toggle="collapse" data-parent="#accordion" href="#collapse5"/>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div id="collapse5" class="panel-collapse collapse ">
+					<div class="panel-body">
+						<div class="content_box">
+							Goto the group that you want to edit->click on group title at top-> edit group page will appear-><br>
+							1. select ‘add participants’ to add new members to the group.<br>
+							2. Select ‘remove’ to remove an existing member.<br>
+							3. Select ‘admin’ to make an existing member admin of the group.<br>
+							4. Click on ‘update’ to successfully edit your group after all changes.<br>
+							Done! done! done!
+						</div>
+					</div>
+				</div>
+			</li>
+			</div>
+			<div class="panel panel-default">
+			<li>
+				<div id="group_951"  >
+					<div id="group_95_ek"  >
+						<div id="rectangle_95_ek"  >
+							<div class="panel-heading">
+							<div id="can_we_have_a_personal_chat_using_chatapp_" >
+								<a>Can we have a personal chat using a chatapp?</a>
+							</div>
+							<div class="keyboard_arrow_down" >
+								<img src="{{url_for('static',filename='dropdown.png')}}" class="dropdown_arrow" data-toggle="collapse" data-parent="#accordion" href="#collapse6"/>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div id="collapse6" class="panel-collapse collapse ">
+					<div class="panel-body">
+						<div class="content_box">
+							Current version of chat app is designed only for group chats,
+							however you can create a group of 2 people(yourself and other person) and chat if required.
+						</div>
+					</div>
+				</div>
+			</li>
+			</div>
+			<div class="panel panel-default">
+			<li>
+				<div id="group_94"  >
+					<div id="group_94_ek"  >
+						<div id="rectangle_94_ek"  >
+							<div class="panel-heading">
+							<div id="not_able_to_register_for_chatapp_" >
+								<a>Not able to register for a chat app?	</a>
+							</div>
+							<div class="keyboard_arrow_down" >
+								<img src="{{url_for('static',filename='dropdown.png')}}" class="dropdown_arrow" data-toggle="collapse" data-parent="#accordion" href="#collapse7"/>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div id="collapse7" class="panel-collapse collapse ">
+					<div class="panel-body">
+						<div class="content_box">
+							Check your registered mailID and userID, both should match in order to have successful registration
+						</div>
+					</div>
+				</div>
+			</li>
+			</div>
+			<div class="panel panel-default">
+			<li>
+				<div id="group_93"  >
+					<div id="group_93_ek"  >
+						<div id="rectangle_93_ek"  >
+							<div class="panel-heading">
+							<div id="how_to_know_if_a_member_is_online_or_not_" >
+								<a>How to know if a member is online or not?</a>
+							</div>
+							<div class="keyboard_arrow_down" >
+								<img src="{{url_for('static',filename='dropdown.png')}}" class="dropdown_arrow" data-toggle="collapse" data-parent="#accordion" href="#collapse8"/>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div id="collapse8" class="panel-collapse collapse ">
+					<div class="panel-body">
+						<div class="content_box">
+							Always when a group is opened, below the chat title you will get the count of members online and total members in that particular group.
+							<br>For a person to be online two conditions required:
+							<br>1.Authenticated user login.
+							<br>2.Chat app browser tab should be open.
+							<br>In the participant list the green dot in front of username represents that member is online
+
+						</div>
+					</div>
+				</div>
+			</li>
+			</div>
+			<div class="panel panel-default">
+			<li>
+				<div id="group_92"  >
+					<div id="group_92_ek"  >
+						<div id="rectangle_92_ek"  >
+							<div class="panel-heading">
+							<div id="how_to_check_if_im_an_admin_or_not_" >
+								<a>How to check if I'm an admin or not?</a>
+							</div>
+							<div class="keyboard_arrow_down" >
+								<img src="{{url_for('static',filename='dropdown.png')}}" class="dropdown_arrow" data-toggle="collapse" data-parent="#accordion" href="#collapse9"/>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div id="collapse9" class="panel-collapse collapse ">
+					<div class="panel-body">
+						<div class="content_box">
+							Go to the participant list, if there is an ‘Admin’ label in front of your name,
+							then you are the admin of the group.
+						</div>
+					</div>
+				</div>
+			</li>
+			</div>
+			<div class="panel panel-default">
+			<li>
+				<div id="group_91"  >
+					<div id="group_91_ek"  >
+						<div id="rectangle_91_ek"  >
+							<div class="panel-heading">
+							<div id="how_to_give_line_breaks_to_text_messages_" >
+								<a>How to give line breaks to text messages?</a>
+							</div>
+							<div class="keyboard_arrow_down" >
+								<img src="{{url_for('static',filename='dropdown.png')}}" class="dropdown_arrow" data-toggle="collapse" data-parent="#accordion" href="#collapse10"/>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div id="collapse10" class="panel-collapse collapse ">
+					<div class="panel-body">
+						<div class="content_box">
+							Use ‘ \ ‘ to give line breaks in your text messages.<br>
+							Eg: <br>
+							Hey\how are u??? >>> Hey<br>
+										   how are you???
+
+						</div>
+					</div>
+				</div>
+			</li>
+			</div>
+			<div class="panel panel-default">
+			<li>
+				<div id="group_90"  >
+					<div id="group_90_ek"  >
+						<div id="rectangle_90_ek"  >
+							<div class="panel-heading">
+							<div id="not_getting_any_notifications_" >
+								<a>Not getting any notifications?</a>
+							</div>
+							<div class="keyboard_arrow_down" >
+								<img src="{{url_for('static',filename='dropdown.png')}}" class="dropdown_arrow" data-toggle="collapse" data-parent="#accordion" href="#collapse11"/>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div id="collapse11" class="panel-collapse collapse ">
+					<div class="panel-body">
+						<div class="content_box">
+							Goto your browser settings-> give notification access and popup access to the chat app.
+							<br>After this you should be able to get notifications.
+						</div>
+					</div>
+				</div>
+			</li>
+			</div>
+			<div class="panel panel-default">
+			<li>
+				<div id="group_89"  >
+					<div id="group_89_ek"  >
+						<div id="rectangle_89_ek"  >
+							<div class="panel-heading">
+							<div id="not_able_to_upload_the_group_pic_" >
+								<a>Not able to upload the group pic?</a>
+							</div>
+							<div class="keyboard_arrow_down" >
+								<img src="{{url_for('static',filename='dropdown.png')}}" class="dropdown_arrow" data-toggle="collapse" data-parent="#accordion" href="#collapse12"/>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div id="collapse12" class="panel-collapse collapse ">
+					<div class="panel-body">
+						<div class="content_box">
+							You can upload images of the following extensions only.
+						<br>'.png', .'jpg', '.jpeg', ‘.gif’
+						<br>Upload images of size < 4MB
+
+						</div>
+					</div>
+				</div>
+			</li>
+			</div>
+			<div class="panel panel-default">
+			<li>
+				<div id="group_88"  >
+					<div id="group_88_ek"  >
+						<div id="rectangle_88_ek"  >
+							<div class="panel-heading">
+							<div id="im_getting_room_not_found_error_" >
+								<a>I'm getting Room not found error?</a>
+							</div>
+							<div class="keyboard_arrow_down" >
+								<img src="{{url_for('static',filename='dropdown.png')}}" class="dropdown_arrow" data-toggle="collapse" data-parent="#accordion" href="#collapse13"/>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div id="collapse13" class="panel-collapse collapse ">
+					<div class="panel-body">
+						<div class="content_box">
+							If you are not a part of a group, or if there is any error in your username
+							you will get this error.Goto home page and reload once, if the problem continues
+							 contact developers for more info.
+						</div>
+					</div>
+				</div>
+			</li>
+			</div>
+			<div class="panel panel-default">
+			<li>
+				<div id="group_87"  >
+					<div id="group_87_ek"  >
+						<div id="rectangle_87_ek"  >
+							<div class="panel-heading">
+							<div id="not_able_to_edit_the_group_" >
+								<a>Not able to edit the group?</a>
+							</div>
+							<div class="keyboard_arrow_down" >
+								<img src="{{url_for('static',filename='dropdown.png')}}" class="dropdown_arrow" data-toggle="collapse" data-parent="#accordion" href="#collapse14"/>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div id="collapse14" class="panel-collapse collapse ">
+					<div class="panel-body">
+						<div class="content_box">
+							Check if you are the admin of that particular group.
+							Only admins can edit the group.
+						</div>
+					</div>
+				</div>
+			</li>
+			</div>
+			<div class="panel panel-default">
+			<li>
+				<div id="group_86"  >
+					<div id="group_86_ek"  >
+						<div id="rectangle_86_ek"  >
+							<div class="panel-heading">
+							<div id="not_able_to_find_members_names_in_the_create_group_list_" >
+								<a>Unable to find members' names in create group list?</a>
+							</div>
+							<div class="keyboard_arrow_down" >
+								<img src="{{url_for('static',filename='dropdown.png')}}" class="dropdown_arrow" data-toggle="collapse" data-parent="#accordion" href="#collapse15"/>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div id="collapse15" class="panel-collapse collapse ">
+					<div class="panel-body">
+						<div class="content_box">
+							Member’s username will be displayed in dropdown during create/edit group,
+							 if and only if he has registered to chat app.
+						</div>
+					</div>
+				</div>
+			</li>
+			</div>
+			<div class="panel panel-default">
+			<li>
+				<div id="group_85"  >
+					<div id="group_85_ek"  >
+						<div id="rectangle_85_ek"  >
+							<div class="panel-heading">
+							<div id="which_is_the_best_suitable_browser_for_chatapp_" >
+								<a>Which is the best suitable browser for chatapp?</a>
+							</div>
+							<div class="keyboard_arrow_down" >
+								<img src="{{url_for('static',filename='dropdown.png')}}" class="dropdown_arrow" data-toggle="collapse" data-parent="#accordion" href="#collapse16"/>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div id="collapse16" class="panel-collapse collapse ">
+					<div class="panel-body">
+						<div class="content_box">
+							Chatapp is supported by all the browsers(chrome, firefox,edge….).
+							We prefer you to use it in your default browser.
+						</div>
+					</div>
+				</div>
+			</li>
+			</div>
+			<div class="panel panel-default">
+			<li>
+				<div id="group_84"  >
+					<div id="group_84_ek"  >
+						<div id="rectangle_84_ek"  >
+							<div class="panel-heading">
+							<div id="is_it_compulsory_to_upload_a_profile_and_group_pic_" >
+								<a>Is it compulsory to upload profile and group pic?</a>
+							</div>
+							<div class="keyboard_arrow_down" >
+								<img src="{{url_for('static',filename='dropdown.png')}}" class="dropdown_arrow" data-toggle="collapse" data-parent="#accordion" href="#collapse17"/>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div id="collapse17" class="panel-collapse collapse ">
+					<div class="panel-body">
+						<div class="content_box">
+							No. there is a default group and
+							profile pic which will be automatically set up if you don't upload any pics.
+						</div>
+					</div>
+				</div>
+			</li>
+			</div>
+			<div class="panel panel-default">
+			<li>
+				<div id="group_83"  >
+					<div id="group_83_ek"  >
+						<div id="rectangle_83_ek"  >
+							<div class="panel-heading">
+							<div id="i_want_to_change_my_profile_pic_" >
+								<a>I want to change my profile pic?</a>
+							</div>
+							<div class="keyboard_arrow_down" >
+								<img src="{{url_for('static',filename='dropdown.png')}}" class="dropdown_arrow" data-toggle="collapse" data-parent="#accordion" href="#collapse18"/>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div id="collapse18" class="panel-collapse collapse ">
+					<div class="panel-body">
+						<div class="content_box">
+							Sorry, in the current version there is no profile pic update option,
+							so you can contact developers if it's really important.
+						</div>
+					</div>
+				</div>
+			</li>
+			</div>
+			<div class="panel panel-default">
+			<li>
+				<div id="group_82"  >
+					<div id="group_82_ek"  >
+						<div id="rectangle_82_ek"  >
+							<div class="panel-heading">
+							<div id="messages_not_getting_sent_" >
+								<a>Messages not getting sent?</a>
+							</div>
+							<div class="keyboard_arrow_down" >
+								<img src="{{url_for('static',filename='dropdown.png')}}" class="dropdown_arrow" data-toggle="collapse" data-parent="#accordion" href="#collapse19"/>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div id="collapse19" class="panel-collapse collapse ">
+					<div class="panel-body">
+						<div class="content_box">
+							 1.Check your internet connection
+							<br>2.Reload the page and check once
+						</div>
+					</div>
+				</div>
+			</li>
+			</div>
+			<div class="panel panel-default">
+			<li>
+				<div id="group_81"  >
+					<div id="group_81_ek"  >
+						<div id="rectangle_81_ek"  >
+							<div class="panel-heading">
+							<div id="screen_resolution_problems_" >
+								<a>Screen resolution problems?</a>
+							</div>
+							<div class="keyboard_arrow_down" >
+								<img src="{{url_for('static',filename='dropdown.png')}}" class="dropdown_arrow" data-toggle="collapse" data-parent="#accordion" href="#collapse20"/>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div id="collapse20" class="panel-collapse collapse ">
+					<div class="panel-body">
+						<div class="content_box">
+							If the UI is not fitting properly to your screen, share your screen
+							 resolution with the developers, and will correct it at earliest.
+						</div>
+					</div>
+				</div>
+			</li>
+			</div>
+			<div class="panel panel-default">
+			<li>
+				<div id="group_80"  >
+					<div id="group_80_ek"  >
+						<div id="rectangle_80_ek"  >
+							<div class="panel-heading">
+							<div id="can_we_share_links_or_urls_" >
+								<a>Can we share links/ URLs?</a>
+							</div>
+							<div class="keyboard_arrow_down" >
+								<img src="{{url_for('static',filename='dropdown.png')}}" class="dropdown_arrow" data-toggle="collapse" data-parent="#accordion" href="#collapse21"/>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div id="collapse21" class="panel-collapse collapse ">
+					<div class="panel-body">
+						<div class="content_box">
+							Yes, of course. You can share links directly through chat app.
+							If you click on link it will redirect you to a new tab.
+						</div>
+					</div>
+				</div>
+			</li>
+			</div>
+						<div class="panel panel-default">
+			<li>
+				<div id="group_50"  >
+					<div id="group_50_ek"  >
+						<div id="rectangle_50_ek"  >
+							<div class="panel-heading">
+							<div id="Edit_room_changes_not_getting_reflected_" >
+								<a>Edit room changes not getting reflected??</a>
+							</div>
+							<div class="keyboard_arrow_down" >
+								<img src="{{url_for('static',filename='dropdown.png')}}" class="dropdown_arrow" data-toggle="collapse" data-parent="#accordion" href="#collapse23"/>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div id="collapse23" class="panel-collapse collapse ">
+					<div class="panel-body">
+						<div class="content_box">
+							Don't worry!! that's due to your browser cache.
+							click on ctrl+f5 on Chat app page in your browser, which will clear cache of chat app from your browser.
+							page gets reloaded as soon as cache is cleared.
+						</div>
+					</div>
+				</div>
+			</li>
+			</div>
+
+
+
+			<div class="panel panel-default">
+			<li>
+				<div id="group_79"  >
+					<div id="group_79_ek"  >
+						<div id="rectangle_79_ek"  >
+							<div class="panel-heading">
+							<div id="other_problems_" >
+								<a>Other problems??</a>
+							</div>
+							<div class="keyboard_arrow_down" >
+								<img src="{{url_for('static',filename='dropdown.png')}}" class="dropdown_arrow" data-toggle="collapse" data-parent="#accordion" href="#collapse22"/>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div id="collapse22" class="panel-collapse collapse ">
+					<div class="panel-body">
+						<div class="content_box">
+							Relax!! Go back to the home page -> reload the page and
+							now continue, if the problem continues contact the developers.
+						</div>
+					</div>
+				</div>
+			</li>
+			</div>
+		</div>
+		</ul>
+	</div>
+	</div>
+	</div>
+	</div>
+
+<!-- Button trigger modal -->
+
+
+
+  <script>
+	function myFunction() {
+		var input, filter, ul, li, a, i, txtValue;
+		input = document.getElementById("search_your_query_here");
+		filter = input.value.toUpperCase();
+		ul = document.getElementById("myUL");
+		li = ul.getElementsByTagName("li");
+		for (i = 0; i < li.length; i++) {
+			a = li[i].getElementsByTagName("a")[0];
+			txtValue = a.textContent || a.innerText;
+			if (txtValue.toUpperCase().indexOf(filter) > -1) {
+				li[i].style.display = "";
+			} else {
+				li[i].style.display = "none";
+			}
+		}
+	}
+	</script>
+</body>
+<script type="text/javascript">
+    if (window.onload )
+    {
+     $.post( "/postmethodfaq", {
+    js_data2: 'on'});
+    }
+</script>
+
+
+<script type="text/javascript">
+
+document.addEventListener('visibilitychange', function() {
+  if(document.hidden)
+  {
+       $.post( "/postfaq", {
+    js_data1: 'off'
+});
+
+}
+  else{
+             $.post( "/postfaq", {
+    js_data1: 'on'
+});
+    }
+
+})
+</script>
+<script type="text/javascript" src="Scripts/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+</html>

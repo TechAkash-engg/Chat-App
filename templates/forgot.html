@@ -1,0 +1,413 @@
+<html lang="en">
+<head>
+    <link rel = "icon" href ="/static/mainicon.png" type = "image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        
+  @media screen and (min-width: 340px) and (max-width: 550px){
+
+                    div#content-container {
+                            width: 100%;
+                            height: 100%;
+                            left: 0px;
+                            top: 0px;
+                        }
+                        div.login-wrapper {
+
+                        width: 100%;
+                        height: 100%;
+                        left: 0%;
+                        top: -100%;
+                         }
+
+                form.form {
+
+               height: 100%;
+                border-radius: 0px;
+                max-width: 566px;
+                top:0vh;
+                width: 100%;
+                }
+
+                form.form .input-group {
+                 width: 88%;
+                    left: -17px;
+                    top: 189px;
+                    }
+                form.form .input-group input {
+                   width: 125%;
+                    }
+                    form.form .submit-btn {
+
+                        border-radius: 8px;
+                        top: 192px;
+                        width: 100%;
+                        height: 49px;
+                        margin-left: -14rem;
+                        }
+
+
+                    div#logo img {
+                    max-width: 92px ;
+                    position: relative;
+                    top:0px;
+                    }
+                    div#logo {
+                     width: 100%;
+                     z-index: 1000;
+                     top: 20px;
+                    position: fixed;
+                    left: 20px;
+                    }
+                    div#forgot_password {
+
+                      width: 100%;
+                      font-size: 26px;
+                      left: 1%;
+                      top:129px;
+                      }
+                      div#lock_1 {
+                      top: -144px;
+                      left: 07px;
+                      width: 100%;
+                      position: relative;
+                    }
+
+
+    }
+        
+        
+@media screen  and (min-width: 1000px) and (max-width: 1368px)
+        {
+div.login-wrapper {
+left: 410px;
+width: 676px;
+height: 388px;
+top: -674px;
+position: relative;
+}
+div#logo img {
+max-width: 10% ;
+position: relative;
+top: -632px;
+}
+form.form .input-group input {
+  width: 200%;
+    }
+div.header {
+height: 105px;
+width: 494px;
+position: relative;
+top: -628px;
+z-index: 1;
+}
+}
+        
+@media screen and (min-width:1380px ) and (max-width: 1800px){
+div#logo img {
+max-width: 10% ;
+position: relative;
+top: -742px;
+}
+form.form .input-group input {
+  width: 220%;
+    }
+div.Header{
+height: 105px;
+width: 494px;
+position: relative;
+top: -763px;
+z-index: 1;
+}
+
+div.login-wrapper {
+  left: 463px;
+  width: 676px;
+  height: 388px;
+top: -794px;
+position: relative;
+}
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body, html {
+  height: 100%;
+  margin: 0;
+  overflow:hidden;
+}
+.login-wrapper {
+  left: 660px;
+  width: 676px;
+  height: 388px;
+top: -984px;
+position: relative;
+}
+.Header{
+height: 105px;
+width: 494px;
+position: relative;
+top: -1003px;
+z-index: 1;
+}
+.Header img{
+  max-height: 100%;
+}
+.bg {
+  /* The image used */
+  background-image: url("static/ILLUS1.gif");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.form {
+  position: relative;
+  padding: 80px 40px 40px;
+  background: rgba(34,38,41,0.8);
+  border-radius: 10px;
+  color:rgb(144, 146, 148);
+  box-shadow: 0 15px 25px rgb(0, 0, 0);
+  width: 570px;
+  height: 300px;
+  top: 17vh;
+}
+.form img {
+  position: absolute;
+  top: -50px;
+  left: calc(50% - 50px);
+  width: 100px;
+  background: transparent;
+}
+#forgot{
+      text-align: left;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  color: green;
+}
+.form h2 {
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  color: #000000;
+}
+.form h3 {
+  text-align: right;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  color: #ff0000;
+}
+.form h4 {
+  text-align: right;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+input[type=checkbox]:not(old) + label {
+  display: inline-block;
+  line-height: 1.5em;
+  margin-top: 6px; }
+
+.form .input-group {
+  position: relative;
+  top: 1vh;
+}
+.form .input-group input {
+  width: 241%;
+  padding: 10px 0;
+  font-size: 1.7rem;
+  letter-spacing: 1px;
+  margin-bottom: 103px;
+  border: none;
+  border-bottom: 1px solid #888B8D;
+  outline: none;
+  background-color: transparent;
+  color: #909294;
+}
+.form .input-group label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 1.5rem;
+  pointer-events: none;
+  transition: .3s ease-out;
+}
+
+.form .input-group input:focus + label,
+.form .input-group input:valid + label {
+  transform: translateY(-18px);
+  color: #909294;
+  font-size: 13px;
+}
+
+.submit-btn {
+  display: block;
+  left:139px;
+  border: none;
+  outline: none;
+  background: linear-gradient(-135.25747173575deg , rgba(24,115,181,1) 0%, rgba(51,159,237,1) 100%);
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 196px;
+  height: 44px;
+  color: #EEF2F4;
+  z-index: 10000;
+ position: relative;
+ font-weight:bold;
+ font-family:Segoe UI;
+ top:-54px;
+}
+
+.terms-pw {
+  color: inherit;
+}
+
+#terms-pw {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  z-index: 1;
+  background: rgb(0, 0, 0);
+  opacity: 0;
+  transition: 0.6s;
+
+}
+#terms-pw:target {
+  height: 100%;
+  opacity: 1;
+}
+.close {
+  position: absolute;
+  right: 1.5rem;
+  top: 0.5rem;
+  font-size: 2rem;
+  font-weight: 900;
+  text-decoration: none;
+  color: inherit;
+}
+#agree-term{
+  margin-left:-145px ;
+  color: purple;
+}
+
+.terms{
+  color: white;
+  margin-left: -140px;
+  font-size: 12px;
+}
+
+#forgot_password {
+
+  width: 308px;
+  height: 61px;
+  overflow: hidden;
+  font-family: Segoe UI;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: left;
+  color:#C2C6C9;
+  left: 100px;
+  text-align: center;
+  position: relative;
+  }
+
+#registered_email_id {
+
+  width: 195px;
+  height: 37px;
+  overflow: hidden;
+  font-family: Segoe UI;
+  font-size: 18px;
+  text-align: left;
+  color:#909294;
+  top: 8px;
+  left: 27px;
+  position: absolute;
+}
+#illus1_1 {
+  top: 0px;
+  width: 1200px;
+  height: 750px;
+  left: 350px;
+position: fixed;
+}
+ #lock_1 {
+  top: 0px;
+  left: 137px;
+  width: 200px;
+}
+#logo img{
+max-width: 10% ;
+position: relative;
+top: -945px;
+}
+    </style>
+    <title>Athrv-Ed Chat App</title>
+</head>
+<script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<body>
+<div class="bg"></div>
+    <div id="logo" >
+     <img src="https://athrved.com/img/Logo/athrvedlogo.png.png ">
+</div>
+
+      <div id="content-container" >
+              <div class="login-wrapper">
+                    <form method="post" class="form" action="/forgot">
+
+
+                      <div id="forgot_password" >
+            FORGOT PASSWORD
+          </div>
+
+                        <div class="input-group">
+                            <input type="text" name="email" id="email_id" autocomplete="off" required>
+                            <label for="email"><span class="iconify" data-icon="zmdi-email" data-inline="false"></span>   <div id="registered_email_id" >
+                REGISTERED EMAIL ID
+              </div> </label>
+                        </div>
+                          <div id="lock_1"  >
+    <img src="{{url_for('static',filename='lock1.png')}}" />
+</div>
+                     <input type="submit" value="Submit" class="submit-btn">
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                    {% for message in messages %}
+                                        <div class="alert alert-warning alert-dismissible">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                        {{ message }}
+                                      </div>
+                                    {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                    </form>
+              </div>
+            </div>
+</body>
+
+</html>

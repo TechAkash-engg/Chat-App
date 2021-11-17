@@ -1,0 +1,2801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Athrv-Ed Chat App</title>
+      <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+       <script type='text/javascript' src='https://code.jquery.com/jquery.min.js'></script>
+        <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel = "icon" href ="/static/mainicon.png" type = "image/x-icon">
+<link rel='stylesheet prefetch' href='https://foliotek.github.io/Croppie/croppie.css'>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css'>
+ <style>
+@media screen and (max-width: 1368px) {
+    form.form_container .submit_container{
+        top: -300px;
+    }
+    form.form_container .submit_container:nth-child(5){
+        top: 162px;
+    }
+    div.bs-example{
+        position: relative;
+    top: -326px;
+    left: 15px
+    }
+    form.form_container .input-group {
+        position: relative;
+        top: -111px;
+    }
+    div.upload-btn-wrapper {
+        top: 29px
+    }
+    form.form_container .list-group{
+        max-height: 200px;
+    }
+
+div.dropdown-menu{
+        top: 328px;
+    }
+    div#bs-select-3{
+        max-height: 146.283px !important;
+    }
+    div#bs-select-2{
+        max-height: 146.283px !important;
+    }
+    div#bs-select-1{
+        max-height: 146.283px !important;
+    }
+
+}
+@media screen and (min-width:1380px) and (max-width: 1800px){
+div.bs-example{
+top:-296px;
+}
+form.form_container .input-group{
+top:-89px;
+}
+form.form_container .submit_container:nth-child(5){
+top:280px;
+}
+form.form_container .submit_container {
+top:-180px;
+}
+form.form_container .submit_container:nth-child(6) > button:nth-child(1){
+height:43px;
+}
+form.form_container .show:nth-child(3) {
+    max-height: 298.283px !important;
+    width:360px;
+    }
+div#bs-select-2 {
+    scrollbar-width: thin;
+
+scrollbar-color: #2D3032 #222629;
+    overflow-y: scroll !important;
+    max-height: 234.283px !important;
+}
+div#bs-select-1 {
+max-height: 214.012px !important;
+    overflow-y: auto;
+    min-height: 97px;
+}
+div#bs-select-3 {
+   max-height: 173.283px !important;
+
+}
+form.form_container .list-group{
+        max-height: 244px;
+}
+div.removelistparty {
+    position: relative;
+    top: 42px;
+}
+div.popup_box{
+height:32%;
+}
+}
+
+
+     :root {
+  --modal-duration: 1s;
+  --modal-color: #ffffff;
+}
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    height:100%;
+    font-family: sans-serif;
+    background: rgba(34,38,41,1) ;
+    background-size:100% auto;
+}
+
+html{
+    font-family:Arial, Helvetica, sans-serif;
+    background:white;
+    font-size:10px;
+
+}
+
+body{
+    display:grid;
+    place-items:center;
+}
+
+#chat-container {
+    display: grid;
+    grid: 'search-container chat-title' 71px 'conversation-list messages' 1fr 'new-message-container message_input_form' 78px / 275px 1fr;
+width: 99%;
+height: 99%;
+position: absolute;
+    margin: auto;
+    background-color:  rgba(34,38,41,1);
+    background-size: cover;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 15px 25px rgb(0, 0, 0);
+    top:0px;
+     overflow: hidden;
+
+}
+
+ #search-container,
+ #conversation-list
+ {
+   background: rgba(34,38,41,1);
+width: 375px;
+ }
+#new-message-container{
+background:#04458f;
+margin-right:-100px;
+}
+#search-container {
+    display:grid;
+    align-items:center;
+    padding: 0 20px;
+    grid-area: search-container;
+    border-radius: 10px 0 0 0;
+    box-shadow: 0 1px 3px -1px rgba(0,0,0,0.75);
+    z-index: 1;
+    background:rgba(45,48,50,1);
+    height: 96px;
+    z-index:250;
+}
+
+#search-container input {
+    color: #eee;
+    outline: none;
+    font-weight:bold;
+    border-radius:2px;
+    height:30px;
+    border:0;
+    padding-left: 48px;
+    padding-right: 2px;
+    font-size: 1.4rem;
+    height: 40px;
+    width: 354px;
+    background: rgba(45,48,50,1);
+    border-radius: 32px;
+    position: fixed;
+    left: 18px;
+    top: 116px;
+    }
+
+.search-container h3{
+color:white;
+}
+#search-container input::placeholder{
+    color: white;
+    font-weight:bold;
+    font-size:1.5rem;
+}
+
+#conversation-list {
+    grid-area: conversation-list;
+    overflow-y: scroll;
+     overflow-x: hidden;
+     height: 588px;
+    position: relative;
+        scrollbar-color: #2D3032 #222629;
+    scrollbar-width: thin;
+    top: 121px;
+    height: 100%;
+
+}
+
+.name{
+position: relative;
+left: 33px;
+top: -16px;
+}
+
+.conversation {
+    display: grid;
+    grid-template-columns: 44px 1fr max-content;
+    grid-gap: 7px;
+    color: #ddd;
+    font-size: 1.8rem;
+    font-weight: normal;
+    align-items: center;
+    align-items: center;
+    padding: 16px 0px 13px 13px;
+    height: 75px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.green > img:nth-child(2) {
+border-bottom: none;
+margin-top: 5px;
+}
+.solid{
+    margin-top: 0.2rem;
+    margin-bottom: 0rem;
+
+}
+
+.conversation:hover
+{ background:rgba(45,48,50,1);
+}
+
+.conversation > img{
+    grid-row: span 2;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+}
+
+.title-text {
+    font-weight:bold;
+
+    padding-left: -5px;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+
+     font-size:1.5rem;
+
+   margin-top: -34.7px;
+
+    padding-top: -4px;
+}
+a {
+     padding: 7px;
+}
+
+.green > img:nth-child(2) {
+border-bottom: none;
+margin-top: 5px;
+}
+.created-date {
+    color: #ddd;
+    font-size: 1.2rem;
+    padding-top:24px;
+    margin-top:5px;
+    padding-left:160px;
+
+}
+
+
+.conversation-message {
+    grid-column: span 2;
+    padding-left: 5px;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+
+}
+a {
+     padding: 7px;
+}
+
+
+#new-message-container {
+    display:grid;
+    grid: 40px / 40px;
+    align-content:center;
+    grid-area: new-message-container;
+    border-top: 1px solid rgba(0,0,0,0.25);
+    border-radius: 0 0 0 10px;
+    padding: 0 15px;
+    border-top: 1px solid #000000;
+    padding-top:18px;
+    background: rgba(34,38,41,1);
+    position: fixed;
+    top: 31px;
+
+}
+
+#new-message-container a{
+    display: grid;
+    place-content: center center;
+    background: #03DAC6;
+    border-radius:100%;
+    color: #000000;
+    text-decoration:none;
+    font-size: 3.6rem;
+
+}
+#new-message-container .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: relative;
+  z-index: 1;
+  top: -30px;
+  left:45px;
+}
+
+#new-message-container:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+#chat-title
+{
+    background: #262626;
+    padding: 20px 20px 20px 15px;
+    border-left: 1px solid #000000;
+}
+
+#chat-title {
+    display:grid;
+    grid: 36px /1fr 36px;
+    align-content:center;
+    align-items:center;
+    grid-area: chat-title;
+    color:white;
+    font-weight:bold;
+    font-size: 2.0rem;
+    border-radius: 0 10px 0 0;
+    padding: 0 20px;
+    background:rgba(45,48,50,1);
+    height: 96px;
+    width: 150%;
+
+}
+
+#chat-title > img{
+    cursor: pointer;
+}
+
+#messages{
+    grid-area: messages;
+    flex-direction:column-reverse;
+    padding: 0 20px;
+    overflow-y: scroll;
+    overflow-x:hidden;
+    border-left: 1px solid #1012137a;
+    margin-left:99px;
+    background: rgba(34,38,41,1);
+    scrollbar-color: #222629 #2d3032;
+scrollbar-width: thin;
+}
+.message-row{
+    display:grid;
+    grid-template-columns: 70%;
+    margin-bottom: 20px;
+}
+
+.message-content{
+    display: grid;
+}
+
+.you-message{
+    justify-content: end;
+    justify-items: end;
+}
+
+.you-message .message-content{
+    justify-items:end;
+}
+.you-message .message-text {
+    color: #FFFFFF;
+    background: rgba(1,76,120,1);
+    border: 1px solid rgba(1,76,120,1);
+    border-radius: 4px 0px 4px 4px;
+    padding-bottom: 32px;
+    min-width: 125px;
+    max-width:700px;
+    padding-bottom: 15px;
+    }
+.other-message{
+    justify-items:start;
+    padding-top: 20px;
+
+}
+
+.other-message .message-content{
+    grid-template-columns:48px 1fr;
+    grid-column-gap: 15px;
+}
+
+.message-row img{
+    border-radius: 100%;
+    grid-row: span 2;
+}
+.message-text{
+    padding: 9px 14px;
+    font-size: 1.6rem;
+    margin-bottom:5px;
+   font-family: Segoe UI;
+}
+
+.message-time{
+
+   color: #3B65FF;
+    position: relative;
+padding: ;
+top: 6px;
+font-size: 15px;
+left: -53px;
+}
+.message-name{
+    font-size: 1.3rem;
+   color: #979DA4;
+    position: relative;
+width: 86px;
+}
+
+.you-message .message-text{
+    color: #FFFFFF;
+    background: rgba(1,76,120,1);
+    border: 1px solid rgba(1,76,120,1);
+    border-radius: 4px 0px 4px 4px;
+    padding-bottom: 32px;
+    min-width: 125px;
+    max-width:700px;
+      font-family: Segoe UI;
+    }
+
+.other-message .message-text{
+    background: rgba(45,48,50,1);
+    border: 1px solid rgba(45,48,50,1);
+color: #FFFFFF;
+    padding-top: 34px;
+padding-bottom: 32px;
+width: max-content;
+max-width: 681px;
+min-width: 127px;
+      font-family: Segoe UI;
+      border-radius: 4px 0px 4px 4px;
+}
+.other-message .message-name{
+ position: relative;
+ top: -27px;
+ left: 6px;
+  font-size: 13px;
+   font-family: Segoe UI;
+}
+.you-message .message-name{
+ position: relative;
+ top: -28px;
+ font-size: 13px;
+   font-family: Segoe UI;
+}
+#message_input_form{
+
+  display:grid;
+    grid: 36px /1fr 36px;
+    align-content:center;
+    align-items:center;
+    grid-area: message_input_form;
+    border-radius: 0 0 10px 0;
+    border-top: 1px solid rgba(0,0,0,0.25);
+    padding-right: 65px;
+    font-family: 'Handlee', cursive;
+    border-right: 1px solid #000000;
+    border-top: 1px solid #000000;
+    background:rgba(45,48,50,1);
+    border-left: 1px solid #000000;
+    top: 43px;
+    position: relative;
+    left: 99px;
+    width: 100%;
+
+}
+
+#message_input_form input{
+    outline: none;
+    padding: 15px;
+    border: 2px ;
+    color: white;
+    border-radius: 29px;
+    font-size: 1.5rem;
+    font-family: Segoe UI;
+
+}
+hr.barforu{
+border-top: 1px solid #909294;
+width:100%;
+ position: relative;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.profile {
+    display: grid;
+    grid: 51px / 40px 2fr;
+    align-content: center;
+    align-items: center;
+    padding-left:50px ;
+    padding-top: 5px;
+    margin-left:50px;
+
+}
+
+ #doc{
+padding-bottom: 25px;
+margin-left:93px;
+}
+
+.user{
+list-style-type:none;
+  font-size:1.8rem;
+  font-weight:normal;
+}
+
+.join{
+     max-width:725px;
+    padding: 15px;
+    text-align:center;
+    margin:10%;
+    color:#909294;
+     font-size: 20px;
+      font-family: Segoe UI;
+    }
+    .users{
+        hr.solid {
+  border-top: 3px solid #bbb;
+  }}
+.title-text .dashname{
+  padding:0px;
+  }
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal_content {
+  margin: 10% auto;
+  width: 60%;
+   width: 101%;
+   height: 0vh;
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+}
+  .modal_content {
+    font-size: medium;
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form_container{
+  font-size: medium;
+  top: -60px;
+  height: 96%;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  padding: 60px 30px 30px;
+ background: rgb(34, 38, 41);
+   color: rgb(255, 255, 255);
+}
+.forms_container{
+  font-size: medium;
+  top: 42vh;
+  height:65vh;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  padding: 60px 30px 30px;
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+  color: rgb(0, 0, 0);
+  box-shadow: 0 15px 25px rgb(0, 0, 0);
+}
+.forms_container .modal_header h1 {
+
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  color: rgb(0, 118, 252);
+  padding-left: 30px;
+}
+input[type=checkbox]:not(old) + label {
+  display: inline-block;
+  line-height: 1.5em;
+  margin-top: 6px; }
+
+.forms_container .input-group {
+  position: relative;
+}
+.forms_container .input-group input {
+  width: 100%;
+  padding: 36px 5px 6px 11px;
+    margin-bottom: 17px;
+  letter-spacing: 1px;
+  border: none;
+border-bottom: 1px solid rgb(255, 255, 255);
+  outline: none;
+  background-color: transparent;
+color: white;
+}
+.forms_container .input-group label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+
+  pointer-events: none;
+  transition: .3s ease-out;
+}
+.forms_container .input-group input:focus + label,
+.forms_container .input-group input:valid + label {
+  transform: translateY(-18px);
+color: white;
+
+}
+
+  .image_container img {
+  position: absolute;
+  top: -40px;
+  left: calc(50% - 50px);
+  width: 100px;
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  }
+  .forms_container img {
+  position: absolute;
+  top: -40px;
+  left: calc(50% - 50px);
+  width: 100px;
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  }
+.form_container .modal_header h1 {
+
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  color: rgb(0, 118, 252);
+  padding-left: 30px;
+}
+input[type=checkbox]:not(old) + label {
+  display: inline-block;
+  line-height: 1.5em;
+  margin-top: 6px; }
+
+.form_container .input-group {
+  position: relative;
+  top: -159px;
+}
+.form_container .input-group input {
+  width: 100%;
+  padding: 36px 5px 6px 11px;
+    margin-bottom: 17px;
+  letter-spacing: 1px;
+  border: none;
+border-bottom: 1px solid rgb(255, 255, 255);
+  outline: none;
+  background-color: transparent;
+  color: white;
+}
+.form_container .input-group label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+
+  pointer-events: none;
+  transition: .3s ease-out;
+}
+.form_container .input-group input:focus + label,
+.form_container .input-group input:valid + label {
+  transform: translateY(-18px);
+color: #fff;
+
+}
+.filter-option {
+    font-size: medium ;
+}
+.dropdown-menu {
+    font-size: medium;
+  }
+.operation{
+  text-align: center;
+  position:relative;
+  top:-191px;
+
+}
+
+
+.btn-grp {
+  background-color:rgb(0, 118, 252);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  width: 130px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.submit_buttons {
+  background-color:rgba(255, 255, 255, 0.19);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  width: 150px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 27px;
+  cursor: pointer;
+}
+
+#submit{
+background-color:rgba(255, 255, 255, 0.19);
+margin-bottom: 6px;
+}
+#deleteme{
+background-color:rgba(255, 255, 255, 0.19);
+margin-bottom: 6px;
+}
+.form_container .submit_container{
+text-align: center;
+position: relative;
+top: -26px;
+}
+.click {
+ font-size: 12px;
+ left: -63px;
+ width: 204px;
+ position: relative;
+ top: -7px;
+}
+
+.close {
+  color: rgb(0, 0, 0);
+  float: right;
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+p {
+    margin-bottom: 1em;
+}
+.modal-wrapper {
+    align-items: center;
+    background-color: rgba(100, 100, 100, 0.5);
+    bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    transition: all 0.2s ease-in-out;
+    visibility: hidden;
+    width: 100%;
+    z-index: 1000;
+}
+.modal-wrapper.visible {
+    opacity: 1;
+    visibility: visible;
+}
+.modal-window {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    padding: -1px;
+    transform: scale(0);
+    transition: 0.2s ease-in-out all;
+}
+
+.modal-wrapper.visible .modal-window {
+    transform: scale(1);
+}
+.modal-header {
+    align-items: center;
+    border-bottom: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+
+}
+
+.close-modal-button {
+    border: none;
+    background-color: transparent;
+    color: rgb(112, 112, 112);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.2em;
+}
+
+.close-modal-button:hover {
+    color: black;
+}
+.modal-trigger {
+    color: rgb(10, 47, 255);
+    cursor: pointer;
+    text-decoration: underline;
+}
+    #modal-list{
+    grid-area: conversation-list;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height:35vh;
+    }
+    .modal-text{
+    padding:10px;
+    margin-top: 7px;
+    margin-right: -22%;
+    margin-left: -16%;
+    margin-bottom: -40px;
+    }
+    .modal-text .dashname{
+    padding-right:70px;
+    font-size: 1.8rem;
+    font-weight: lighter;
+    color: white;
+    padding:11px 109px 13px 19px;
+    }
+.userstatus {
+        color: #00b665;
+        text-align: right;
+        margin-top: -2px;
+        margin-right: -28px;
+        margin-left: -28px;
+        margin-bottom: -28px;
+        top: -25px;
+        position: relative;
+        left: -10px;
+        font-size: small;
+        z-index: 1000;
+    }
+span.dot:nth-child(2) {
+ position: relative;
+ top: 0px;
+ left: 234px;
+}
+
+    .modal-list.active
+    {
+    background:#04458f;
+    margin: -11px 83px 0px 74px;
+    }
+.userstatus > img:nth-child(1) {
+ border-bottom: 1px;
+ width: 17%;
+ position: relative;
+top: 7px;
+left: -41px;
+}
+
+   .modalbreaker {
+      border-top: 3px solid #000;
+margin-right: 83px;
+margin-left: 74px;
+  }
+  .submit_buttons{
+    margin:37px 120px;
+  }
+  .dropbtn {
+  color: white;
+  padding: 0px;
+  font-size: 0px;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(0, 118, 252);
+  margin-right: -38px;
+}
+
+.doc .img{
+    vertical-align: middle;
+    padding: 2px 7.1px 12.5px 4px;
+    margin-top: -5px;
+
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  min-width: 60px;
+  overflow: auto;
+  z-index: 1;
+  font-size: 1.7rem;
+  font-weight: normal;
+  margin: 10px -25px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: transparent;}
+
+.show {display: block;}
+.rclose{
+    font-weight:70;
+    float:right;
+    font-size:30px;
+    margin: -58px -13px;
+}
+.eclose{
+    font-weight:70;
+    float:right;
+    font-size:30px;
+    margin: -58px -13px;
+}
+.rclose:hover{
+    color:grey;
+}
+.eclose:hover{
+    color:grey;
+}
+.bootstrap-select > .dropdown-toggle.bs-placeholder, .bootstrap-select > .dropdown-toggle.bs-placeholder:active, .bootstrap-select > .dropdown-toggle.bs-placeholder:focus, .bootstrap-select > .dropdown-toggle.bs-placeholder:hover
+{
+    color: #000;
+    margin-top: 15px;
+    padding: 8px;
+    background-color: #81b7f08a;
+}
+.bootstrap-select .dropdown-toggle .filter-option {
+    text-align: center;
+}
+#join {
+    padding: 1px;
+    text-align:center;
+    margin:3%;
+    color:#909294;
+     font-size: 20px;
+     font-family: Segoe UI;
+    position:relative;
+    left:-50px;
+     width: 95%;
+    }
+
+ .file-wrapper{
+     margin:auto;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     position:relative;
+     width: 49%;
+    height: 18vh;
+    top: -13vh;
+     z-index:500;
+ }
+ .upload-btn-wrapper{
+     position: relative;
+     overflow: hidden;
+     display: inline-block;
+     cursor: pointer;
+     top:43px;
+ }
+ .upload-file{
+     color:#9b9b9b;
+     widows: 173px;
+     height:149px;
+     border-radius: 8px;
+     font-size:15px;
+     cursor: pointer;
+ }
+ .upload-btn-wrapper input[type=file]{
+     position: absolute;
+     right:0;
+     opacity: 0;
+     cursor: pointer;
+     width: 137%;
+    left: -22px;
+    top: -12px;
+    min-height: 121px;
+ }
+    .success {
+     display: block;
+     position: relative;
+     top: 3px;
+    }
+
+ .success i{
+     font-size:22px;
+     margin-left:6px;
+     margin-top:10px;
+     color:#00b665;
+ }
+ .font-50{
+     font-size:50px;
+ }
+ .d-block{
+     display: block;
+ }
+ .btn .upload-file{
+     font-size:13px;
+ }
+ .upload-btn{
+     display: block;
+     font-size:18px;
+     color:rgb(0, 118, 252);
+ }
+.font-50 {
+     font-size:36px;
+ }
+
+.cropImageBtn{
+  display: block;
+  margin-left: auto;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  border-radius: 11px;
+  cursor: pointer;
+  background: linear-gradient(-135.25747173575deg , rgba(24,115,181,1) 0%, rgba(51,159,237,1) 100%);
+    width: 138px;
+    height: 40px;
+    font-size: 18px;
+    color: white;
+  left: -166px;
+    position: relative;
+}
+.red{
+  display: block;
+  margin-right: auto;
+  border: none;
+  outline: none;
+  background: rgb(252, 0, 0);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  border-radius: 11px;
+  cursor: pointer;
+}
+.image_container .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+    display:block;
+  /* Position the tooltip */
+  position: relative;
+  z-index: 1;
+  top: 85px;
+  left:-10%;
+}
+ .modal-body {
+ padding-left: 7.6rem;
+ padding-right:1rem;
+ padding-top:1rem;
+ padding-bottom:1rem;
+
+}
+
+.image_container:hover .tooltiptext {
+  visibility: visible;
+}
+    label.cabinet{
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    margin-top:-128px;
+    padding-bottom:78px;
+    margin-left:100px;
+    margin-right:100px;
+    margin-bottom:16px;
+    border-radius:50%;
+    position:relative;
+      z-index:1;
+
+}
+.image_container{
+    align-content: center;
+    background:transparent;
+    margin-left:129px;
+    top:18vh
+    position:absolute;
+      width:13vw;
+}
+
+label.cabinet input.file{
+    position: fixed;
+    height: 100%;
+    width: auto;
+    opacity: 0;
+    -moz-opacity: 0;
+  filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  margin-top:-30px;
+}
+.figclass{
+    align-items: center;
+}
+
+#upload-demo{
+    width: 250px;
+    height: 250px;
+  padding-bottom:25px;
+  left: 50px;
+position: relative;
+top:-30px;
+}
+img {
+    border-bottom: transparent;
+}
+figure figcaption {
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    width: 100%;
+    padding-left: 9px;
+    padding-bottom: 5px;
+    text-shadow: 0 0 10px #000;
+}
+.gambar img-responsive img-thumbnail {
+ position: absolute;
+
+  left: calc(50% - 50px);
+  width: 100px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+
+}
+#item-img-output{
+  border-radius: 50%;
+  z-index:1;
+
+}
+#profileupload{
+    opacity:0;
+}
+.btnup {
+    background: rgb(0, 118, 252);
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 17000;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(219, 197, 197, 0.5);;
+}
+.tool {
+  position: relative;
+  display: inline-block;
+}
+.tool .stext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 19px;
+  right: 85%;
+}
+
+.tool .stext::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent black;
+}
+.tool:hover .stext {
+  visibility: visible;
+}
+#ChatDropdown{
+padding-left: 130px;
+margin-left: -153px;
+}
+a {
+color: #1000ad;
+}
+.float-container {
+
+
+    position: relative;
+    top: 2vh;
+}
+.float-child {
+    float: left;
+    padding-left: 5px;
+
+}
+.green {
+ background: transparent;
+height: 74px;
+top: -20px;
+position: relative;
+}
+img {
+ vertical-align:middle;
+ padding: 2px 7.1px 12.5px 4px;
+ margin-top: -5px;
+
+}
+hr {
+ margin-top:1rem;
+ margin-bottom:1rem;
+ border:0;
+ border-top:3px solid rgba(0,0,0,.1);
+}
+.dropdown-item {
+ text-align:left;
+
+}
+
+#search_bar {
+    top: 96px;
+    left: 10px;
+    width: 354px;
+    height: 40px;
+}
+
+#rectangle_149 {
+    width: 374px;
+    background:rgba(34,38,41,1);
+    position: relative;
+    height: 78px;
+    top: -588px;
+    }
+.back {
+position: relative;
+top: 0px;
+left: -10px;
+}
+.userprofile {
+position: relative;
+left: -75px;
+width: 495px;
+height: 61px;
+top: -10px;
+}
+#roomname {
+ position: relative;
+ left: 284px;
+ top: -54px;
+ width: 364px;
+ text-align: left;
+}
+
+#message_input_form > input:nth-child(2) {
+width: 66px;
+left: -112px;
+position:relative;
+}
+#message_input {
+position: relative;
+background: rgba(34,38,41,1);
+width: 96%;
+left: 13px;
+
+}
+
+.back > a:nth-child(1) > img:nth-child(1) {
+border-bottom: none;
+}
+.online {
+ position: relative;
+top: 55px;
+left: 135px;
+font-size: 15px;
+font-weight: lighter;
+ width: max-content;
+
+}
+.online_members {
+ font-size: 15px;
+font-weight: lighter;
+top: 62px;
+left: 211px;
+position: absolute;
+}
+a:not([href]):not([class]) {
+ color:inherit;
+ text-decoration:none;
+ position: relative;
+ left: -117px;
+}
+
+.dot {
+
+background-color: rgba(43.72,160.44,48.39,1);
+position: relative;
+left: -4px;
+height: 12px;
+width: 12px;
+top: 0px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dotted {
+
+background-color: rgba(43.72,160.44,48.39,1);
+position: relative;
+left: 297px;
+height: 12px;
+width: 12px;
+top: 1px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.aligned{
+position: relative;
+left: 0px;
+top: -26px;
+}
+.userprofile > a:nth-child(1) > img:nth-child(1) {
+top: 18px;
+left: -8px;
+position: relative;
+}
+.sidepanel  {
+  width: 0;
+  position: absolute;
+  z-index: 1;
+  height: 250px;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidepanel a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+
+
+.sidepanel a:hover {
+  color: #f1f1f1;
+}
+
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  z-index: 1000;
+}
+
+#openbtn {
+  font-size: 20px;
+  cursor: pointer;
+background-color: #2d3032;
+  color: white;
+padding: 19px 15px;
+  border: none;
+  position:relative;
+  z-index: 210;
+  outline: 0;
+}
+.removelistparty {
+ position: relative;
+ top: 28px;
+}
+.adminlistparty {
+ position: relative;
+ top: 32px;
+ left: 10px;
+ /*! overflow-x: hidden; */
+}
+
+#openbtn:hover {
+  background-color:#444;
+}
+#mySidepanel {
+top: 0px;
+height: 101%;
+width:0px;
+overflow-y: hidden;
+z-index: 250;
+border-left: 1px solid #1012137a;
+}
+.editprofile {
+ width: 402px;
+background: #2d3032;
+height: 96px;
+ top: -60px;
+ position: relative;
+}
+.modal-backdrop.show {
+ display: none;
+}
+#blankFile {
+ position: relative;
+ top: 12px;
+ left: ;
+}
+.bs-example {
+ position: relative;
+top: -361px;
+left: 20px;
+}
+.nav-tabs .nav-link {
+ font-size: 15px;
+}
+.nav-tabs {
+ border-bottom:1px solid #dee2e6;
+ left: -20px;
+ position: relative;
+}
+.list-group-item+.list-group-item.active {
+ margin-top:-1px;
+ border-top-width:1px;
+ position: relative;
+top: 11px;
+max-height: 49px;
+}
+.list-group-item.active {
+ z-index:2;
+ color:#fff;
+ background-color:transparent;
+ border-color: transparent;
+ position: relative;
+top: 11px;
+max-height: 49px;
+}
+
+.list-group {
+ display:-ms-flexbox;
+ display:flex;
+ -ms-flex-direction:column;
+ flex-direction:column;
+ padding-left:0;
+ margin-bottom:0;
+ overflow-y: scroll;
+ top: -9px;
+ left: -14px;
+ position: relative;
+max-height: 420px;
+scrollbar-color: #2D3032 #222629;
+scrollbar-width: thin;
+width: 345px;
+border-radius: 1px;
+overflow-x: hidden;
+}
+
+div.submit_container:nth-child(5) {
+ position: relative;
+top: 441px;
+ z-index: 100;
+ left: 55px;
+}
+div.submit_container:nth-child(6) > button:nth-child(1) {
+ position: relative;
+ z-index: 100;
+top: 376px;
+height: 46px;
+left: -109px;
+}
+.list-group-item.active {
+ border-color:transparent;
+}
+
+#collapse_add {
+ position: relative;
+ top: 154px;
+ z-index: 2000;
+}
+.bootstrap-select > .dropdown-toggle.bs-placeholder, .bootstrap-select > .dropdown-toggle.bs-placeholder:active, .bootstrap-select > .dropdown-toggle.bs-placeholder:focus, .bootstrap-select > .dropdown-toggle.bs-placeholder:hover {
+    margin-top: 15px;
+    padding: 8px;
+    position: relative;
+    width: 147%;
+    margin-bottom: -15px;
+    left: -23px;
+    color: transparent!important;
+    background-color: #313233;
+}
+.btn-light:not(:disabled):not(.disabled).active,
+.btn-light:not(:disabled):not(.disabled):active,
+.show>.btn-light.dropdown-toggle {
+ color:#212529;
+ background-color:#313233;
+ border-color:transparent;
+}
+
+.bootstrap-select .dropdown-toggle .filter-option {
+    text-align: center;
+    color: white !important;
+}
+#collapse_add > div:nth-child(1) > button:nth-child(2) {
+ width: 347px;
+ border-radius: 1px;
+ background: #313233;
+ color: white;
+top:13px;
+    position: relative;
+    left: -72px;
+border: 1px;
+}
+
+#Group > button:nth-child(1) {
+ position: relative;
+ top: 190px;
+ width: 345px;
+ border-radius: 1px;
+ left: -2px;
+background: transparent;
+ height: 60px;
+}
+#Group > button:nth-child(1) > p:nth-child(2) {
+ position: relative;
+ top: -19px;
+ left: 8px;
+ width: 173px;
+ font-size: 17px;
+ color: #909294;
+}
+#Group > button:nth-child(1) > img:nth-child(1) {
+ width: 12%;
+ border-bottom: 1px;
+ position: relative;
+ left: -142px;
+ top: 13px;
+}
+
+div.w-50\% > button:nth-child(2) {
+ display: block;
+ border: 1px;
+ width: 344px;
+
+
+}
+div.show:nth-child(1) > div:nth-child(3) {
+ top: 50px;
+ left: -10px !important;
+
+}
+
+div.w-50\% > div:nth-child(3) {
+ background: #222629;
+}
+.dropdown-item {
+ background: #222629;
+}
+.form-control {
+ background-color:white;
+ border-radius: 33px;
+ padding: 1.375rem 2.75rem;
+}
+div.w-50\% > div:nth-child(3) > div:nth-child(1) > input:nth-child(1) {
+background-color: white;
+}
+div.w-50\% > div:nth-child(3) > div:nth-child(1) > input:nth-child(1) {
+ color: black;
+}
+.bootstrap-select.show-tick .dropdown-menu li a span.text {
+position: relative;
+ font-size: 18px;
+ left: 0px;
+}
+.dropdown a:hover {
+ background-color: #2D3032;
+}
+.bootstrap-select .bs-ok-default:after {
+ border-width:0 .13em 0.13em 0;
+color: #0076fc;
+}
+.bootstrap-select.show-tick .dropdown-menu .selected span.check-mark {
+ position:absolute;
+ display:inline-block;
+ right:25px;
+ top:5px
+}
+
+#Admin > div:nth-child(1) > button:nth-child(2) {
+ display: block;
+ background: #313233;
+}
+div.w-50\% > button:nth-child(2) {
+background: #313233;
+ position: relative;
+top: 14px;
+left: -14px;
+
+}
+.dropdown-toggle::after {
+ display: none;
+}
+
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+ width:236px;
+}
+.bootstrap-select>select {
+ left:53%;
+}
+
+#Admin > div:nth-child(1) > button:nth-child(2) {
+ width: 136%;
+ left: 8px;
+ border:1px;
+ top: 9px;
+}
+#Admin {
+ position: relative;
+ top: -67px;
+ left: 67px;
+ overflow: hidden;
+ height: 586px;
+
+}
+div.show:nth-child(3) {
+ max-height: 510.283px !important ;
+ overflow: scroll;
+ min-height: 147px;
+ position: absolute;
+ will-change: transform;
+ top: 0px;
+left: -14px;
+ transform: translate3d(-81px, 68px, 0px);
+ width: 347px;
+ border: 1px;
+ background: #222629;
+  overflow-y: scroll;
+ scrollbar-width: thin;
+ scrollbar-color: #2D3032 #222629;
+}
+div.show:nth-child(1) > div:nth-child(3) > div:nth-child(1) > input:nth-child(1) {
+ width: 277px;
+ left: 30px;
+position: relative;
+}
+
+.bootstrap-select > .dropdown-toggle.bs-placeholder, .bootstrap-select > .dropdown-toggle.bs-placeholder:active, .bootstrap-select > .dropdown-toggle.bs-placeholder:focus, .bootstrap-select > .dropdown-toggle.bs-placeholder:hover {
+    margin-top: 15px;
+    padding: 8px;
+    position: relative;
+    width: 147%;
+    margin-bottom: -15px;
+    left: -19px;
+    color: transparent!important;
+    background-color: #313233;
+}
+#bs-select-2 {
+ scrollbar-width: thin;
+scrollbar-color: #2D3032 #222629;
+ overflow-y: scroll !important;
+ max-height: 287.283px !important ;
+}
+#bs-select-3 {
+ scrollbar-width: thin;
+scrollbar-color: #2D3032 #222629;
+ max-height: 287.283px !important ;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+ color:#fff;
+ text-decoration:none;
+ background-color:rgba(45,48,50,1);
+}
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+color: #fff;
+background-color:transparent;
+ border-color:transparent;
+}
+.tooltip2{
+  display: inline-block;
+}
+
+.tooltip2 .tooltiptext {
+  visibility: hidden;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  width: 177px;
+    background-color: #2d3032;
+ left: 155px;
+top: 101px;
+
+}
+
+.tooltip2 .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent rgb(41, 39, 39);
+}
+.tooltip2:hover .tooltiptext {
+  visibility: visible;
+}
+.click, .popup_box{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.popup_box{
+  background: #303539;
+  opacity: 0.9;
+  border: 1px solid #393838;
+  border-radius: 6px;
+  text-align: center;
+  align-items: center;
+  padding: 40px;
+  width: 98%;
+  box-shadow: 3px 3px 10px rgba(83, 83, 83, 0.2);
+  z-index: 9999;
+  display: none;
+  height: 26%;
+}
+.popup_box i{
+  color: #eb9447;
+  border: 5px solid #eb9447;
+  border-radius: 50%;
+  margin: -10px 0 20px 0;
+  font-size: 27px;
+    padding: 7px 15px;
+    top: -23px;
+    position: relative;
+}
+.popup_box h1{
+  font-size: 17px;
+  color: #fff;
+  margin-bottom: 5px;
+  position: relative;
+    top: -28px;
+}
+.popup_box label{
+  font-size: 14px;
+ color: #a8a8a8;
+ position: relative;
+top: -24px;
+}
+.popup_box .btns{
+  margin: 40px 0 0 0;
+  position: relative;
+top: -38px;
+}
+.btns .btn1, .btns .btn2{
+  background:#000 ;
+  border: 1px solid #000000fc;
+  color: white;
+  font-size: 15px;
+  width: 165px;
+  border-radius: 5px;
+  padding: 10px 13px;
+  width: 106px;
+left: 45px;
+position: relative;
+top: 0px;
+}
+.btns .btn2{
+  background: rgba(255, 255, 255, 0.19);
+  left: 72px;
+    top: -45px;
+    position: relative;
+    height: 45px;
+}
+.btns .btn1:hover{
+  transition: .5s;
+  background:#00000085;
+
+}
+.btns .btn2:hover{
+  transition: .5s;
+  background:rgba(255, 255, 255, 0.19);
+}
+a.click {
+ font-size: 16px;
+font-weight: inherit;
+left: 62px;
+}
+.message-text a{
+color:#04f3ff;
+}
+.modal-content {
+ background-color:rgba(34,38,41,1);
+}
+.modal-header {
+    border-bottom: 1px;
+}
+.cr-slider {
+top: -10px;
+position: relative;
+}
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+button:not(:disabled) {
+ outline: 0 !important;
+}
+.iamon {
+ position: relative;
+left: 40px;
+ top: -45px;
+}
+#showc {
+ position: relative;
+left: 23px;
+min-width: 16px;
+max-width: 40px;
+width: max-content;
+ top: -23px;
+}
+
+
+    </style>
+</head><script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+<body id="load_older_messages">
+
+
+
+  <div id="chat-container">
+      <div id="rectangle_149"  ></div>
+       <div id="search_bar"  >
+
+
+
+            </div>
+        <div id="search-container">
+                <div class="back">
+          <a href="/index"><img src="{{url_for('static',filename='back.png')}}" style="padding-top:20px;"/></a></div>
+
+            <input type="text" id="searchbar" onkeyup="search_member()" placeholder="Search" title="Type in a name" >
+        </div>
+                      <div id="conversation-list">
+
+                  <div class="float-container">
+               {% for (img,group) in imggrplist %}
+                <ul id="user" >
+                <li class="group">
+                     <a href="/rooms/{{ group._id.room_id }}" style="color:white; text-decoration:none">   <div class="title-text">
+                         <hr class="solid">
+            <div class="conversation ">
+
+                 <div class="green">
+        <hr class="solid" >
+                     <img src="{{url_for('static',filename=img)}}" />
+    </div>
+                <div class="name" > {{ group.room_name }}</div>
+
+            </div>
+        </div></a>
+                     </li>
+                     </ul>
+               {% endfor %}
+</div>
+        </div>
+
+
+        <div id="chat-title">
+       <button id="openbtn" class="tooltip2" onclick="openNav()"> <div class="profile">
+              {% for pic in roompic %}
+           <div class="userprofile"> <a><img src="{{url_for('static',filename=pic)}}" style="padding-bottom:20px; border-bottom: none"/><div id="roomname">{{ room.name }}</div> </a></div><div class="online_members">{{li}} Members</div><div class="online"> <span class="dot"></span><div id="showc">  </div><p class="iamon">Online</p></div>
+              {% endfor %}
+          </div>
+             <span class="tooltiptext">Click to Edit Room</span>
+       </button>
+
+</div><div id="mySidepanel" class="sidepanel">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+ <div class="editprofile">
+
+ </div>
+
+
+
+
+<form method="post" class="form_container"  action="" enctype="multipart/form-data">
+
+<div class="modal fade" id="cropImagePop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"> <img src="{{url_for('static',filename='cross.png')}}" alt=""></span></button>
+                              <h4 class="modal-title" id="myModalLabel">
+                                <?=multiLanguage( "Edit Foto" , "Edit Photo" )?></h4>
+                            </div>
+                            <div class="modal-body">
+                            <div id="upload-demo" class="center-block"></div>
+                      </div>
+                             <div class="modal-footer">
+        <button type="button" class="cropImageBtn">Crop</button>
+      </div>
+                            </div>
+                          </div>
+                        </div>
+
+              <div class="file-wrapper">
+      <div class="upload-btn-wrapper">
+          <button class="btn upload-file font-weight-500">
+              <span class="upload-btn">
+
+              </span>
+
+              <span class="success">
+                <i class="far fa-check-circle text-success"></i>
+              </span>
+          </button>
+          <input type="file" class="item-img file center-block" id="selectfile" name="file" autocomplete="off">
+      </div>
+  </div>
+           <div class="image_container">
+               {% for pic in roompic %}
+         <img src="{{url_for('static',filename=pic)}}" class="gambar img-responsive img-thumbnail" id="item-img-output" style="max-width:102px" />
+               {% endfor %}
+<!--  <span class="tooltiptext">Upload your Profile Picture</span>-->
+
+</div>
+
+
+              <div class="input-group">
+                  <input type="text" name="room_name" id="room_name" required value="{{room.name}}" autocomplete="off">
+                  <label for="room_name"><span class="iconify" data-icon="zmdi-accounts" data-inline="false"></span> Room Name</label><br>
+              </div>
+
+
+ <div class="submit_container">
+                <button type="Submit" class="submit_buttons" id="submit" disabled="disabled" >Update Group</button>
+              </div>
+              <div class="submit_container">
+                <button name="delete_room" type="submit" class="submit_buttons" id="deleteme" value="delete_room"  > <a href="#" class="click">Delete Group</a></button>
+                      </div>
+    {% for member in room_members %}
+                {% if member.is_room_admin and member._id.username==username %}
+                 <script type='text/javascript'>
+            $(function () {
+                 $('.submit_buttons').prop('disabled', false);
+                 $('#sorry_you_are_not_admin').prop('disabled', false);
+                 $("#submit").css("background-color", "rgb(0, 118, 252)");
+                 $("#deleteme").css("background-color", "red");
+                 $(".btns .btn2").css("background-color", " #ff3333");
+                 $(".btns .btn2:hover").css("background-color", " #e60000");
+
+            });
+        </script>
+
+   {% endif %}
+                  {% endfor %}
+
+    <br>
+                    <div class="popup_box">
+          <i class="fas fa-exclamation"></i>
+          <h1>Your group will be deleted Permanently!</h1>
+          <label>Are you sure to proceed?</label>
+          <div class="btns">
+            <a href="#" class="btn1">Cancel</a>
+              <button name="delete_room" type="submit" class="btn2" id="sorry_you_are_not_admin" value="delete_room" disabled="disabled">Confirm</button>
+          </div>
+        </div>
+   {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-warning alert-dismissible">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                              {{ message }}
+                            </div>
+                    {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+
+
+<div class="bs-example">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a href="#Participants" class="nav-link active" data-toggle="tab">Participants List</a>
+        </li>
+        <li class="nav-item">
+            <a href="#Remove"  onclick="myFunction()" class="nav-link" data-toggle="tab">Remove</a>
+
+        </li>
+        <li class="nav-item">
+            <a href="#Admin" class="nav-link" data-toggle="tab">Admin</a>
+        </li>
+    </ul>
+
+
+    <div class="tab-content">
+        <div class="tab-pane fade show active" id="Participants">
+              <div class="operation" id="Group">
+
+                  <button class="btn-grp" type="button" data-toggle="collapse" data-target="#collapse_add" aria-expanded="false" aria-controls="collapse_add">
+                         <img src="{{url_for('static',filename='addparty.png')}}"/>      <p>Add Participants</p>
+                              </button>
+
+                          <div class="collapse" id="collapse_add" data-parent="#Group">
+                                <select name="addmembers" id="addmembers" class="selectpicker " multiple data-live-search="true" title="Add Members">
+                                  {% for user in non_members %}
+                                    <option value="{{ user }}">{{ user }}</option>
+                                  {% endfor %}
+                                </select>
+                              </div>
+              </div>
+             <form action="" class="forms_container" method="POST">
+  <div class="list-group">
+          {% for member in room_members %}
+  <button type="button" class="list-group-item list-group-item-action active">
+{{ member._id.username }}
+  {% if member.is_room_admin %}
+                                             <div class="userstatus">
+
+
+                          <img src="{{url_for('static',filename='admin.png')}}"/>
+                                                              </div>
+                                             {% endif %}
+
+             {% for person in online_members %}
+                    {% if person==member._id.username %}
+<div class="aligned">
+               <span class="dotted"></span>
+
+   </div>                 {% endif %}
+                    {% endfor %}
+
+             {% endfor %}
+
+  </button>
+
+</div>
+
+
+          </form>
+
+                </div>
+        <div class="tab-pane fade" id="Remove" >
+
+
+
+
+                     <select name="delmembers" id="delmembers"  data-parent="#removeGroup"  class="selectpicker w-50% "  multiple data-live-search="true" title="Remove">
+
+                      {% for member in room_members %}
+                        <option value="{{ member._id.username }}">{{ member._id.username }}
+                        &nbsp       &nbsp         {% if member.is_room_admin %}
+
+                                           <div class="circle"></div>
+                                                              {% endif %}
+
+                        </option>
+                      {% endfor %}
+                    </select>
+
+
+
+<div class="removelistparty">
+  <div class="list-group">
+          {% for member in room_members %}
+  <button type="button" class="list-group-item list-group-item-action active">
+{{ member._id.username }}
+  {% if member.is_room_admin %}
+                                             <div class="userstatus">
+
+
+                          <img src="{{url_for('static',filename='admin.png')}}"/>
+                                                              </div>
+                                             {% endif %}
+      <div class="aligned">
+             {% for person in online_members %}
+                    {% if person==member._id.username %}
+
+               <span class="dotted"></span>
+
+                    {% endif %}
+                    {% endfor %}
+
+             {% endfor %}
+</div>
+
+
+
+  </button>
+
+</div>
+
+
+</div>
+                   </div>
+        <div class="tab-pane fade" id="Admin">
+
+
+
+
+                          <select name="adminmembers" id="adminmembers"  data-parent="#myGroup" class="selectpicker "  multiple data-live-search="true" title="Make Admin">
+                      {% for member in room_members %}
+                        <option value="{{ member._id.username }}">{{ member._id.username }}
+                            &nbsp &nbsp   &nbsp &nbsp                   {% if member.is_room_admin %}
+
+
+                                                              {% endif %}
+        </option>
+                      {% endfor %}
+                    </select>
+<div class="adminlistparty">
+  <div class="list-group">
+          {% for member in room_members %}
+  <button type="button" class="list-group-item list-group-item-action active">
+{{ member._id.username }}
+  {% if member.is_room_admin %}
+                                             <div class="userstatus">
+
+
+                          <img src="{{url_for('static',filename='admin.png')}}"/>
+                                                              </div>
+                                             {% endif %}
+      <div class="aligned">
+             {% for person in online_members %}
+                    {% if person==member._id.username %}
+
+               <span class="dotted"></span>
+
+                    {% endif %}
+                    {% endfor %}
+
+             {% endfor %}
+</div>
+
+
+
+  </button>
+
+</div>
+
+</div>
+
+              </div>
+
+
+    </div>
+
+</div>
+
+          </form>
+
+
+</div>
+       <div id="my-modal" class="modal">
+    <div class="modal_content">
+
+    </div>
+    </div>
+
+      <div id="edit-modal" class="modal">
+    <div class="modal_content">
+
+
+    </div>
+    </div>
+    <div id="messages">
+        <div  id="join">   </div>
+         <hr class="barforu">
+             {% for message in messages %}
+            <div class="message-row you-message">
+                <div class="message-content">
+                    <div class="message-text">   {{ message.text }}</div>
+                    <div class="message-time">{{ message.sender }}&nbsp;</div>
+                     <div class="message-name">  {{ message.created_at }}:&nbsp;&nbsp;</div>
+                </div>
+            </div>
+              {% endfor %}
+                {% for message in messages %}
+            <div class="message-row other-message">
+                <div class="message-content">
+       <img src="{{url_for('static',filename='sender1.png')}}"  style="padding:0px;border-bottom:none;margin-top:0px" />
+                    <div class="message-text">
+                       {{ message.text }}
+                    </div>
+                    <div class="message-time">{{ message.sender }}</div>
+                      <div class="message-name">  {{ message.created_at }}:&nbsp;&nbsp;</div>
+                </div>
+            </div>
+              {% endfor %}
+        </div>
+        <form id="message_input_form">
+            <input type="text" id="message_input" autocomplete="off" placeholder="Type a message" size="0" style="padding-bottom:18px;"/>
+            <!--<input type="image" src="{{url_for('static',filename='send.png')}}">  <textarea id="message_input" placeholder="Type a message" size="50" style="padding-bottom:18px;"/></textarea>-->
+            <input type="image" src="{{url_for('static',filename='send.png')}}"   >
+        </form>
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src='https://foliotek.github.io/Croppie/croppie.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
+<script>
+function DisableFunction() {
+  document.getElementById("submit").disabled = true;
+}
+</script>
+
+    <script>
+      $(document).ready(function(){
+        $('.click').click(function(){
+          $('.popup_box').css("display", "block");
+        });
+        $('.btn1').click(function(){
+          $('.popup_box').css("display", "none");
+        });
+        $('.btn2').click(function(){
+          $('.popup_box').css("display", "none");
+
+        });
+      });
+
+    </script>
+    <script>
+        const modal = document.querySelector('#my-modal');
+        const modalBtn = document.querySelector('#modal-btn');
+        const closeBtn = document.querySelector('.rclose');
+        modalBtn.addEventListener('click', openModal);
+        closeBtn.addEventListener('click', closeModal);
+        window.addEventListener('click', outsideClick);
+        function openModal() {
+          modal.style.display = 'block';
+        }
+        function closeModal() {
+          modal.style.display = 'none';
+        }
+        function outsideClick(e) {
+          if (e.target == modal) {
+            modal.style.display = 'none';
+          }
+        }
+        </script>
+
+<script>
+        const editmodal = document.querySelector('#edit-modal');
+        const editBtn = document.querySelector('#edit-btn');
+        const editcloseBtn = document.querySelector('.eclose');
+         editcloseBtn.addEventListener('click', editcloseModal);
+        editBtn.addEventListener('click', openModal);
+        window.addEventListener('click', eoutsideClick);
+        function openModal() {
+        editmodal.style.display = 'block';
+        }
+         function editcloseModal() {
+          editmodal.style.display = 'none';
+        }
+        function eoutsideClick(e) {
+          if (e.target == editmodal) {
+            editmodal.style.display = 'none';
+          }
+        }
+
+</script>
+
+<script>
+function chatdrop() {
+  document.getElementById("ChatDropdown").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+<script>
+function search_member() {
+    let input = document.getElementById('searchbar').value
+    input=input.toLowerCase();
+    let x = document.getElementsByClassName('group');
+
+    for (i = 0; i < x.length; i++) {
+        if (!x[i].innerHTML.toLowerCase().includes(input)) {
+            x[i].style.display="none";
+        }
+        else {
+            x[i].style.display="list-item";
+        }
+    }
+}
+</script>
+<script>
+        var x =setInterval(myFunction(),3000);
+    function myFunction() {
+      var d = new Date();
+      var n = d.toDateString();
+      document.getElementById("join").innerHTML = n;
+    }
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+ <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase.js"></script>
+
+<script src="../static/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-firestore.js"></script>
+<script src="../static/firebase.init.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+    var socket = io('https://athrvedchattesting.herokuapp.com/',{transports: ['websocket']});
+    var message;
+    var friend_id = '';
+    var message_received = '';
+
+    socket.on('connect', function () {
+        socket.emit('join_room', {
+            username: "{{ username }}",
+            user_id: "{{ user_id }}",
+            room: "{{ room._id }}"
+        });
+        let message_input = document.getElementById('message_input');
+        document.getElementById('message_input_form').onsubmit = function (e) {
+             e.preventDefault();
+
+      var message =document.getElementById("message_input").value.trim();;
+      console.log(message.length)
+        var i;
+          for (i = 0; i < message.length; i++){
+          console.log(message[i])
+
+                         if(message[i]=='['){
+
+                var x= message[i]
+                var newElem = document.createElement("BR");
+                var y=document.getElementById("message_input").appendChild(newElem);
+                 console.log("this is x",x)
+                 console.log("this is newelem",newElem)
+                var z = "</br>"
+                var res = message.replace(x,z);
+                console.log("this is before res",res);
+                var message= res;
+                 console.log("this is new msg",message)
+                console.log("this is res",res);
+                continue
+              }
+      else{
+      console.log("looking for it");
+
+      }
+
+          console.log("this is looped",message)
+        }
+
+          console.log("this is finalcut",res)
+
+      var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+      var text1=message.replace(exp, "<a target=_blank href='$1'>$1</a>");
+      var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+      message=text1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+
+            if (message.length) {
+                socket.emit('send_message', {
+                    username: "{{ username }}",
+                    room: "{{ room._id }}",
+                    message: message
+                })
+        room = "{{ room.name }}";
+                sender_name = "{{ username }}";
+        room_id = "{{ room._id }}";
+                group_members = {{group_members_list | tojson}};
+                var i;
+                for(i=0; i<group_members.length; i++){
+                    friend_id = group_members[i];
+                    firebase.database().ref('fcmTokens').child(friend_id).once('value').then(function (data) {
+                        $.ajax({
+                            url: 'https://fcm.googleapis.com/fcm/send',
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': 'key=AAAAZrI6Dt0:APA91bFFdjSmPJ2vNQFbVbl06uUYSwUFHvQfOTCFHk1J-T-AsVi_3PZwHvcA_wGK3F0Ygvsxiy5tHvfXZphzANvJpGeTg4Al27O3cUABIMs3l81FNm8vbecJ1g7Uh8zc6gEc_6gwQnhG'},
+                            data: JSON.stringify({
+                                'to': data.val().token_value, 'data': { 'message':  room + '\n' + sender_name + ':' + ' ' + message, 'click': room_id}
+                            }),
+                            success: function(response) {
+                                console.log(response);
+                                console.log(friend_id)
+                            },
+                            error: function(xhr, status, error){
+                                console.log(error);
+                            }
+                        });
+                    });
+                }
+            }
+            message_input.value = '';
+            message_input.focus();
+        }
+    });
+
+    document.getElementById("load_older_messages").onload = (e) => {
+        fetch("/rooms/{{ room._id }}/messages", {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(response => {
+            response.json().then(messages => {
+                messages.reverse().forEach(message => prepend_message(message.text, message.sender,message.created_at));
+            })
+        })
+    };
+
+     function prepend_message(message, username, created_at) {
+        var newNode = document.createElement('div');
+        if (username=="{{username}}"){
+        newNode.innerHTML = `   <div class="message-row you-message">
+         <div class="message-content">
+                 <div class="message-text">
+                  ${message}
+                  </div>
+
+                     <div class="message-name">
+                    ${created_at}&nbsp;
+                    </div>
+                </div>
+            </div>
+            <br>`;
+            }
+        else {
+            newNode.innerHTML =  `   <div class="message-row other-message">
+            <div class="message-content">
+
+                 <div class="message-text">
+                  ${message}
+                  </div>
+                    <div class="message-time">
+                    ${username}&nbsp;
+                    </div>
+                     <div class="message-name">
+                    ${created_at}&nbsp;
+                    </div>
+                </div>
+            </div>
+                   <br>`;
+             }
+
+        const messages_div = document.getElementById('messages');
+        messages_div.insertBefore(newNode, messages_div.firstChild);
+        var l = document.getElementsByClassName("message-content").length;
+        document.getElementsByClassName("message-content")[l-1].scrollIntoView();
+    }
+
+    window.onbeforeunload = function () {
+        socket.emit('leave_room', {
+            username: "{{ username }}",
+            room: "{{ room._id }}"
+        })
+    };
+
+    socket.on('receive_message', function (data) {
+        console.log(data);
+        const newNode = document.createElement('div');
+
+          if (data.username=="{{username}}") {
+            newNode.innerHTML =  `   <div class="message-row you-message">
+          <div class="message-content">
+                 <div class="message-text">
+                  ${data.message}
+                  </div>
+
+                     <div class="message-name">
+                    ${data.created_at}&nbsp;
+                    </div>
+                </div>
+            </div>
+             <br>`;
+                }
+             else {
+            newNode.innerHTML =  `   <div class="message-row other-message">
+          <div class="message-content">
+                 <div class="message-text">
+                  ${data.message}
+                  </div>
+                    <div class="message-time">
+                    ${data.username}&nbsp;
+                    </div>
+                     <div class="message-name">
+                    ${data.created_at}&nbsp;
+                    </div>
+                </div>
+            </div>
+             <br>`;
+             }
+        document.getElementById('messages').appendChild(newNode);
+        var l = document.getElementsByClassName("message-content").length;
+        document.getElementsByClassName("message-content")[l-1].scrollIntoView();
+    });
+
+
+
+    socket.on('join_room_announcement', function (data) {
+        console.log(data);
+
+    });
+
+</script>
+
+
+<script>
+    $("#selectfile").bind('change',function(){
+    var filename = $("#selectfile").val();
+    if(/^s*$/.test(filename)){
+        $("#blankFile").text("No File Chosen..");
+        $(".success").hide();
+    }else{
+        $("#blankFile").text(filename.replace("C:\\fakepath\\",""));
+        $(".success").show();
+    }
+})
+</script>
+<script>
+$(".gambar").attr("static", "avatar.png");
+                        var $uploadCrop,
+                        tempFilename,
+                        rawImg,
+                        imageId;
+                        function readFile(input) {
+                            if (input.files && input.files[0]) {
+                              var reader = new FileReader();
+                                reader.onload = function (e) {
+                                    $('.upload-demo').addClass('ready');
+                                    $('#cropImagePop').modal('show');
+                                    rawImg = e.target.result;
+                                }
+                                reader.readAsDataURL(input.files[0]);
+                            }
+                            else {
+                                swal("Sorry - you're browser doesn't support the FileReader API");
+                            }
+                        }
+
+                        $uploadCrop = $('#upload-demo').croppie({
+                            viewport: {
+                                width: 150,
+                                height: 150,
+                                type:'circle'
+                            },
+                            enforceBoundary: false,
+                            enableExif: true
+                        });
+                        $('#cropImagePop').on('shown.bs.modal', function(){
+                            //alert('Shown pop');
+                            $uploadCrop.croppie('bind', {
+                                url: rawImg
+                            }).then(function(){
+                                console.log('jQuery bind complete');
+                            });
+                        });
+
+                        $('.item-img').on('change', function () { imageId = $(this).data('id'); tempFilename = $(this).val();
+                                                                                                         $('#cancelCropBtn').data('id', imageId); readFile(this); });
+                        $('.cropImageBtn').on('click', function (ev) {
+                            $uploadCrop.croppie('result', {
+                                type: 'base64',
+                                format: 'jpeg',
+                                size: {width: 150, height: 150}
+
+                            }).then(function (resp) {
+                                $('#item-img-output').attr('src', resp);
+                                $('#imagebase64').val(resp);
+                                $('#cropImagePop').modal('hide');
+                                console.log($uploadCrop.croppievvb );
+
+                            });
+                        })
+</script>
+<script type="text/javascript">
+    if (window.onload )
+    {
+     $.post( "/postmethodload", {
+    javascript_data2: 'on'});
+    }
+</script>
+
+<script type="text/javascript">
+
+document.addEventListener('visibilitychange', function() {
+  if(document.hidden)
+  {
+       $.post( "/postmethodview", {
+    javascript_data1: 'off'
+});
+
+}
+  else{
+             $.post( "/postmethodview", {
+    javascript_data1: 'on'
+});
+    }
+
+})
+</script>
+
+
+<script>
+function closeNav() {
+  document.getElementById("mySidepanel").style.width = "0";
+}
+function openNav() {
+
+  document.getElementById("mySidepanel").style.width = "400px";
+
+}
+
+
+</script>
+<script>
+    function list() {
+  document.getElementById("myDIV").style.display = "block";
+}
+</script>
+<script>
+
+$(function(){
+
+    $.ajaxSetup ({
+        cache: false
+    });
+
+
+
+<!--    var loadUrl = "/static/memb.txt";-->
+<!--    $("#loadbasic").click(function(){-->
+<!--        $("#result").load(loadUrl);-->
+<!--    });-->
+
+
+});
+</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+$(document).ready(
+            function() {
+                setInterval(function() {
+
+                    $.get('/static/memb.txt', function(data) {
+
+            var lines = data.split("\n");
+            total=lines[0];
+            var res7 = total.replace(/ /g, "");
+            var res = res7.replace(/["']/g, "");
+            val_final=res.split(",")
+            var groupmemb={{group_members|tojson}}
+
+
+ var res6 = groupmemb.replace(/ /g, "");
+                var res2 = res6.replace(/["']/g, "");
+                var res3 = res2.replace("[", "");
+                var res4 = res3.replace("]", "");
+               total_final=res4.split(",")
+
+
+             var a1=val_final;
+             var a2=total_final;
+
+     var a=[];
+    for(var i=0;i<a1.length;i++){
+        for(var j=0; j<a2.length;j++){
+            if(a1[i]==a2[j]){
+              a.push(a1[i])
+            }
+}
+       }
+       
+
+  var text = " ";
+  var i;
+  for (i = 0; i < a.length; i++) {
+    text += a[i] + " ";
+  }
+  var len = a.length;
+  $('#showc').text(len);
+                    $('#show').text(text);
+                    });
+                }, 3000);
+            });
+
+</script>
+</html>
+

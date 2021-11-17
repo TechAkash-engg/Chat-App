@@ -1,0 +1,2027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Athrv-Ed Chat App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet">
+ <link rel = "icon" href ="/static/mainicon.png" type = "image/x-icon">
+<link rel='stylesheet prefetch' href='https://foliotek.github.io/Croppie/croppie.css'>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css'>
+    <style>
+@media only screen and (max-width: 1366px){
+#messages #go_to_faq{
+    height: 42px;
+    width: 42px;
+    position: relative;
+   top: 86%;
+left: 84%;
+}
+div.dropdown-menu{
+left:-3px;
+}
+div.name{
+top:-14px;
+}
+form.form{
+top:-74px;
+}
+div#design_your_own_circle{
+   left: 32%;
+}
+form.form .submit_container {
+    top: 632px;
+    left: 758px;
+}
+div.partition{
+height:40%;
+}
+#chat-container {
+    display: grid;
+    grid: 'search-container chat-title' 71px 'conversation-list messages' 1fr 'new-message-container message_input_form' 78px / 275px 1fr;
+    position: absolute;
+    width: 99%;
+    height: 99%;
+    margin: auto;
+    background-color:  rgba(34,38,41,1);
+    background-size: cover;
+    top: 0px;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 15px 25px rgb(0, 0, 0);
+    overflow: hidden;
+}
+.createpanel {
+ position: relative;
+ z-index: 3000;
+left: -16px;
+ width: 380px;
+}
+#imageparent {
+ position: relative;
+ left: 57%;
+ top: 175px;
+}
+div.modal-dialog{
+top:11px !important;
+overflow:hidden;
+position:relative !important;
+left:55px;
+}
+div#conversation-list{
+height:73%;
+}
+}
+
+@media screen and (min-width:1380px) and (max-width: 1800px){
+#messages #go_to_faq{
+    height: 42px;
+    width: 42px;
+    position: relative;
+   top: 87%;
+left: 86%;
+}
+div.name{
+top:-14px;
+}
+form.form{
+top:-74px;
+}
+form.form .submit_container{
+top:717px;
+}
+div.partition{
+height:40%;
+}
+#chat-container {
+    display: grid;
+    grid: 'search-container chat-title' 71px 'conversation-list messages' 1fr 'new-message-container message_input_form' 78px / 275px 1fr;
+    position: absolute;
+    width: 99%;
+    height: 99%;
+    margin: auto;
+    background-color:  rgba(34,38,41,1);
+    background-size: cover;
+    top: 0px;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 15px 25px rgb(0, 0, 0);
+    overflow: hidden;
+}
+.createpanel {
+ position: relative;
+ z-index: 3000;
+left: -16px;
+ width: 380px;
+}
+#imageparent {
+ position: relative;
+ left: 60%;
+ top: 175px;
+}
+div.modal-dialog{
+top:11px !important;
+overflow:hidden;
+position:relative !important;
+left:55px;
+}
+div#conversation-list{
+height:77%;
+}
+}
+        :root {
+  --modal-duration: 1s;
+  --modal-color: #ffffff;
+}
+
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    height:100%;
+    font-family: sans-serif;
+    background-color:  rgba(34,38,41,1);
+    background-size:100% auto;
+}
+
+html{
+    font-family:Arial, Helvetica, sans-serif;
+    background:white;
+    font-size:10px;
+}
+
+body{
+    display:grid;
+    place-items:center;
+}
+#chat-container {
+    display: grid;
+    grid: 'search-container chat-title' 71px 'conversation-list messages' 1fr 'new-message-container message_input_form' 78px / 275px 1fr;
+position: absolute;
+width: 99%;
+height: 99%;
+    margin: auto;
+    background-color:  rgba(34,38,41,1);
+    background-size: cover;
+    top: 0px;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 15px 25px rgb(0, 0, 0);
+    overflow: hidden;
+}
+ .search-container,
+ #conversation-list
+ {
+     margin-right:-100px;
+     width: 378px;
+ }
+
+.search-container {
+    display:grid;
+    align-items:center;
+    padding: 0 20px;
+    grid-area: search-container;
+    box-shadow: 0 1px 4px -1px rgba(0,0,0,0.75);
+    width: 138%;
+    z-index: 1;
+    height: 96px;
+        background:rgba(45,48,50,1);
+
+
+
+}
+
+.search-container input {
+    color: #eee;
+    outline: none;
+    font-weight:bold;
+    border:0;
+    padding-left: 48px;
+    padding-right: 2px;
+    font-size: 1.4rem;
+    background-position: 15px center;
+    background-size: 20px 20px;
+    position: fixed;
+    background: rgba(45,48,50,1);
+    top: 116px;
+    border-radius: 32px;
+    height: 40px;
+    width: 354px;
+
+
+}
+
+#search_bar {
+    top: 96px;
+    left: 10px;
+    width: 354px;
+    height: 40px;
+}
+
+.search-container h3{
+color:white;
+}
+.search-container input::placeholder{
+    color: white;
+    font-weight:bold;
+    font-size:1.5rem;
+}
+
+#conversation-list {
+    grid-area: conversation-list;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    top: 161px;
+    height: 588px;
+    position: fixed;
+    background: rgba(34,38,41,1);
+    scrollbar-color: #2D3032 #222629;
+    scrollbar-width: thin;
+    height: 82%;
+    }
+
+.conversation {
+    display: grid;
+    grid-template-columns: 44px 1fr max-content;
+    grid-gap: 7px;
+    color: #ddd;
+    font-size: 1.8rem;
+    font-weight: normal;
+    align-items: center;
+    align-items: center;
+    padding: 16px 0px 13px 13px;
+    height: 75px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.green > img:nth-child(2) {
+border-bottom: none;
+margin-top: 5px;
+}
+.solid{
+    margin-top: 0.2rem;
+    margin-bottom: 0rem;
+
+}
+
+.conversation:hover
+{ background:rgba(45,48,50,1);
+}
+
+.conversation > img{
+    grid-row: span 2;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+}
+
+.title-text {
+    font-weight:bold;
+
+    padding-left: -5px;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+     font-size:1.5rem;
+    margin-top: -34.7px;
+    padding-top: -4px;
+}
+a {
+     padding: 7px;
+}
+.created-date {
+    color: #ddd;
+    font-size: 1.2rem;
+    padding-top:24px;
+    margin-top:5px;
+    padding-left:160px;
+
+}
+
+.conversation-message {
+    grid-column: span 2;
+    padding-left: 5px;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+
+}
+.nav-tabs {
+ border-bottom:transparent;
+top: 2px;
+left: 58px;
+ position: relative;
+}
+.chatlogo {
+ position: relative;
+ left: 21px;
+ top: 29px;
+}
+.createpanel {
+ position: relative;
+ z-index: 3000;
+left: -16px;
+ width: 380px;
+}
+
+#new-message-container {
+ position: fixed;
+left: 620px;
+top: 168px;
+}
+
+#new-message-container a{
+    display: grid;
+    place-content: center center;
+    border-radius:100%;
+    color: #000000;
+    text-decoration:none;
+    font-size: 3.6rem;
+
+}
+#new-message-container .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: relative;
+  z-index: 1;
+  top: -30px;
+  left:45px;
+}
+
+#new-message-container:hover .tooltiptext {
+  visibility: visible;
+}
+
+#chat-title,
+#message_input_form{
+    background: #262626;
+
+    padding: 20px 20px 20px 15px;
+
+
+
+}
+#chat-title h3{
+    font-size:2.5rem;
+    font-weight:bold;
+}
+#chat-title {
+    display:grid;
+    grid: 36px /1fr 36px;
+    align-content:center;
+    align-items:center;
+    grid-area: chat-title;
+    color:white;
+    font-weight:bold;
+    font-size: 2.0rem;
+    box-shadow: 0 1px 3px -1px rgba(0,0,0,0.75);
+    padding: 0 20px;
+    background: rgba(45,48,50,1);
+    height: 96px;
+}
+
+#chat-title > img{
+    cursor: pointer;
+
+}
+
+#messages{
+    grid-area: messages;
+    flex-direction:column-reverse;
+background: rgba(34,38,41,1);
+position: relative;
+width: 100%;
+left:105px;
+height: 107%;
+top: 26px;
+border-left: 1px solid #1012137a;
+}
+
+.message-row{
+    display:grid;
+    grid-template-columns: 70%;
+    margin-bottom: 20px;
+}
+
+.message-content{
+    display: grid;
+}
+
+.you-message{
+    justify-content: end;
+    justify-items: end;
+}
+
+.you-message .message-content{
+    justify-items:end;
+}
+
+.other-message{
+    justify-items:start;
+}
+
+.other-message .message-content{
+    grid-template-columns:48px 1fr;
+    grid-column-gap: 15px;
+}
+
+.message-row img{
+    border-radius: 100%;
+    grid-row: span 2;
+}
+.message-text{
+    padding: 9px 14px;
+    font-size: 1.6rem;
+    margin-bottom:5px;
+     font-family: 'Handlee', cursive;
+}
+
+.message-time{
+    font-size: 1.3rem;
+    color: #777;
+}
+.message-name{
+    font-size: 1.3rem;
+    color: #777;
+}
+
+
+.you-message .message-text{
+    background:#24a7ec;
+    color: #eee;
+    border:1px solid #004BAA;
+    border-radius: 14px 14px 0 14px;
+}
+
+.other-message .message-text{
+    background:#424242;
+    color: #eee;
+    border:1px solid #ddd;
+    border-radius: 14px 14px 14px 0;
+}
+
+#message_input_form{
+    display: grid;
+    grid: 51px / 32px 1fr;
+    align-content: center;
+    align-items: center;
+    grid-gap: 35px;
+    grid-area: message_input_form;
+    border-radius: 0 0 10px 0;
+    border-top: 1px solid rgba(0,0,0,0.25);
+    padding-left: 35px;
+    padding-right: 65px;
+      font-family: 'Handlee', cursive;
+      border-right: 1px solid #000000;
+      border-top: 1px solid #000000;
+}
+
+#message_input_form input{
+    outline: none;
+    padding: 15px;
+
+    border: 2px ;
+    color: #330;
+    border-radius: 6px;
+    font-size: 1.4rem;
+
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.profile {
+    display: grid;
+    grid: 51px / 68px 2fr;
+    align-content: center;
+    align-items: center;
+    padding-left:120px ;
+    padding-top: 90px;
+}
+
+ div.doc{
+padding-bottom: 25px;
+left: 10px;
+position: relative;
+}
+.dropdown,
+.dropleft,
+.dropright,
+.dropup {
+ position:relative;
+ left: -3px;
+}
+
+ div.searchlog{
+display:none;
+}
+
+#users{
+list-style-type:none;
+  font-size:0.8rem;
+  font-weight:normal;
+
+}
+
+.join{
+     max-width:725px;
+    padding: 15px;
+    text-align:center;
+    margin:10%;
+    color:white;
+     font-size: 20px;
+     font-family: 'Handlee', cursive;
+    }
+    .users{
+        hr.solid {
+  border-top: 3px solid #bbb;
+
+  }
+  }
+.title-text .dashname{
+  padding:40px;
+
+  }
+
+  .modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal_content {
+  margin: 10% auto;
+  width: 60%;
+
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+}
+.modal_content {
+    font-size: medium;
+    top: 35vh;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    height: 60vh;
+}
+.form {
+position: relative;
+width: 100%;
+left: 0px;
+height: 100%;
+color: #C2C6C9;
+top: -38px;
+background: rgb(34, 38, 41);
+}
+
+.image_container img {
+top: -50px;
+left: calc(50% - 50px);
+width: 190px;
+background: rgba(159, 210, 255, 0.87);
+border-radius: 50%;
+}
+
+.form h2 {
+text-align: center;
+letter-spacing: 1px;
+margin-bottom: 2rem;
+color: #000000;
+}
+.form .input-group {
+position: relative;
+left: 100px;
+top: -265px;
+}
+.form .input-group input {
+width: 100%;
+padding: 10px 0;
+letter-spacing: 1px;
+margin-bottom: 30px;
+border: none;
+font-size:18px;
+border-bottom: 1px solid rgb(194, 198, 201);
+outline: none;
+background-color: transparent;
+color: #909396;
+}
+
+.form .modal_header h1 {
+
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  color: #000000;
+}
+.form .input-group label {
+position: absolute;
+top:-7px;
+left: 0;
+padding: 10px 0;
+pointer-events: none;
+transition: .3s ease-out;
+color: #909396;
+}
+.form .input-group input:focus + label,
+.form .input-group input:valid + label {
+transform: translateY(-18px);
+color: #909396;
+}
+.filter-option {
+    font-size: medium ;
+}
+.dropdown-menu {
+    font-size: medium;
+  }
+  .closee {
+  color: rgb(0, 0, 0);
+  float: right;
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+  margin: -58px -13px;
+}
+.closee:hover{
+    color:grey;
+}
+
+.closee:hover,
+.closee:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.submit_buttons {
+background: linear-gradient(-135.25747173575deg , rgba(24,115,181,1) 0%, rgba(51,159,237,1) 100%);
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 263px;
+    height: 43px;
+    font-size: 22px;
+    position: relative;
+top: -95px;
+
+}
+.form .submit_container{
+text-align: center;
+left: 54%;
+position: fixed;
+top: 852px;
+}
+.selectpicker{
+    font-size: ;
+}
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+
+
+}
+#logo img{
+max-width: 10% ;
+}
+
+ .file-wrapper{
+
+     margin:auto;
+     display: flex;
+     height: 113vh;
+left: 5%;
+top: -131px;
+height: 215px;
+position: relative;
+
+     }
+
+     #imageparent {
+ position: relative;
+ left: 60%;
+ top: 175px;
+}
+
+ .upload-btn-wrapper{
+     position: relative;
+     overflow: hidden;
+     display: inline-block;
+     cursor: pointer;
+top: 135px;
+
+
+ }
+ .upload-file{
+     color:#9b9b9b;
+     widows: 173px;
+     height:149px;
+     border-radius: 8px;
+     font-size:15px;
+     cursor: pointer;
+ }
+.upload-btn-wrapper input[type=file] {
+   width: 97%;
+position: fixed;
+     right:0;
+     opacity: 0;
+     cursor: pointer;
+     min-height: 300px;
+     left: 1061px;
+top: 333px;
+
+ }
+
+ .success{
+     display:none;
+ }
+ .success i{
+     font-size:22px;
+     margin-left:6px;
+     margin-top:10px;
+     color:#00b665;
+ }
+ .font-50{
+     font-size:50px;
+ }
+ .d-block{
+     display: block;
+ }
+ .btn .upload-file{
+     font-size:13px;
+ }
+ .upload-btn{
+     display: block;
+     font-size:18px;
+     color:rgb(0, 118, 252);
+     position: relative;
+top: -20px;
+ }
+.font-50 {
+     font-size:36px;
+ }
+
+.cropImageBtn{
+  display: block;
+  margin-left: auto;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  border-radius: 11px;
+  cursor: pointer;
+  background: linear-gradient(-135.25747173575deg , rgba(24,115,181,1) 0%, rgba(51,159,237,1) 100%);
+    width: 138px;
+    height: 40px;
+    font-size: 18px;
+    color: white;
+  left: -114px;
+    position: relative;
+}
+.red{
+  display: block;
+  margin-right: auto;
+  border: none;
+  outline: none;
+  background: rgb(252, 0, 0);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  border-radius: 11px;
+  cursor: pointer;
+}
+.image_container .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+    display:block;
+  /* Position the tooltip */
+  position: relative;
+  z-index: 1;
+  top: 85px;
+  left:-10%;
+}
+ .modal-body {
+ padding-left: 7.6rem;
+ padding-right:1rem;
+ padding-top:1rem;
+ padding-bottom:1rem;
+left: 50px;
+}
+.modal-content{
+    background: rgba(34,38,41,1);
+}
+.modal-header{
+    border-bottom: 1px solid rgba(34,38,41,1);
+}
+.image_container:hover .tooltiptext {
+  visibility: visible;
+}
+    label.cabinet{
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    margin-top:-128px;
+    padding-bottom:78px;
+    margin-left:100px;
+    margin-right:100px;
+    margin-bottom:16px;
+    border-radius:50%;
+    position:relative;
+      z-index:1;
+
+}
+.image_container{
+    align-content: center;
+    background:transparent;
+      width:13vw;
+position: relative;
+}
+
+label.cabinet input.file{
+    position: fixed;
+    height: 100%;
+    width: auto;
+    opacity: 0;
+    -moz-opacity: 0;
+  filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  margin-top:-30px;
+}
+.figclass{
+    align-items: center;
+}
+
+#upload-demo{
+    width: 250px;
+    height: 250px;
+  padding-bottom:25px;
+}
+figure figcaption {
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    width: 100%;
+    padding-left: 9px;
+    padding-bottom: 5px;
+    text-shadow: 0 0 10px #000;
+}
+.gambar img-responsive img-thumbnail {
+ position: absolute;
+
+  left: calc(50% - 50px);
+  width: 100px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+
+}
+#item-img-output{
+  border-radius: 50%;
+  z-index:1;
+  top: 20px;
+    position: relative;
+}
+#profileupload{
+    opacity:0;
+}
+.btnup {
+    background: rgb(0, 118, 252);
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 17000;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(219, 197, 197, 0.5);;
+}
+
+.float-container {
+
+
+    position: relative;
+    top: 5vh;
+}
+.float-child {
+    float: left;
+   left: -12px;
+top: 14px;
+position: relative;
+
+}
+.name{
+position: relative;
+left: 20px;
+top: -16px;
+}
+.green {
+ background: transparent;
+height: 74px;
+top: -17px;
+position: relative;
+}
+img {
+ vertical-align:middle;
+
+ padding: 2px 7.1px 12.5px 4px;
+ margin-top: -5px;
+ border-bottom: solid 1px rgb(0, 118, 252);
+}
+hr {
+ margin-top:1rem;
+ margin-bottom:1rem;
+ border:0;
+ border-top:3px solid rgba(0,0,0,.1);
+}
+
+
+.btn-secondary:hover {
+color: #fff;
+background-color: rgba(45,48,50,1);
+border-color: rgba(45,48,50,1);
+}
+
+.btn-secondary {
+background-color:rgba(45,48,50,1);
+border-color: #2d3032;
+}
+.dropdown-item {
+
+color: #fff;
+}
+.dropdown-menu {
+
+background-color: rgba(45,48,50,1);
+}
+.profile > img:nth-child(1) {
+padding-top: -35px;
+top: -16px;
+position: relative;
+}
+
+#chat-title h3 {
+position: relative;
+top: -10px;
+left: 7px;
+}
+
+
+div.dropdown:nth-child(1) > a:nth-child(1) > img:nth-child(1) {
+border-bottom: none;
+}
+.dropdown-item {
+ left: 5px;
+}
+
+#modal-btn > img:nth-child(1) {
+border-bottom: none;
+top:19px;
+position:relative;
+}
+
+img {
+border-bottom: solid 1px rgb(31, 34, 37);
+}
+.nav > li:nth-child(2) {
+position: relative;
+top: 15px;
+left: -15px;
+z-index: 100;
+}
+li.active {
+position: relative;
+z-index: 1;
+}
+#smalllogo {
+ width: 30%;
+ left:-65px;
+ position:relative;
+}
+
+#defaulthome{
+color: red;
+font-size: 20px;
+
+}
+.input-group {
+width: 36%;
+font-size: 22px;
+}
+.form-group {
+position: relative;
+left: 106px;
+width: 290px;
+top: -257px;
+}
+label {
+font-size: 22px;
+}
+.partition {
+  position: absolute;
+border-left: 1px solid #C2C6C9;
+height: 50%;
+top: 165px;
+left: 47%;
+}
+button.btn:nth-child(1) {
+
+position: relative;
+top: 25px;
+}
+
+#design_your_own_circle {
+    top: -387px;
+    left: 37%;
+    position: relative;
+    width: 336px;
+    height: 61px;
+    overflow: hidden;
+    font-family: Segoe UI;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: left;
+    color:#339FED;
+}
+
+#create_account {
+    top: -382px;
+    left: 43%;
+    position: relative;
+    width: 160px;
+    height: 44px;
+    overflow: hidden;
+    font-family: Segoe UI;
+    font-size: 22px;
+    text-align: left;
+    color:#C2C6C9;
+}
+button.btn:nth-child(2) {
+border-radius: 9px;
+background: #2d3032;
+border: 1px;
+}
+.modal-backdrop {
+    z-index: -100;
+}
+.cr-slider {
+top: -10px;
+position: relative;
+}
+.dropdown-menu {
+color: white;
+}
+.dropdown-item:focus, .dropdown-item:hover {
+background-color: #4082c4;
+}
+div.dropdown-menu:nth-child(3) {
+position: relative !important;
+height: 155px !important;
+top: -28px !important;
+overflow-y: scroll !important;
+overflow-x: hidden !important;
+  scrollbar-color: #2D3032 #222629;
+    scrollbar-width: thin;
+
+}
+#bs-select-1 {
+overflow-y: hidden !important;
+max-height:800px !important;
+}
+.btn-light {
+ color:#000 !important;
+ background-color:#f8f9fa !important;
+ border-color:transparent !important;
+}
+
+#go_to_faq{
+    height: 42px;
+    width: 42px;
+    position: relative;
+top: 89%;
+left: 89%;
+}
+#qs_mark2{
+    height: 47px;
+    width: 47px;;
+}
+.tooltip1 {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip1 .tooltiptext {
+  visibility: hidden;
+  width: 100px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: 110%;
+}
+
+.tooltip1 .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent rgb(41, 39, 39);
+}
+.tooltip1:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltip2 {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip2 .tooltiptext {
+  visibility: hidden;
+  width: 100px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: 110%;
+}
+
+.tooltip2 .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent rgb(41, 39, 39);
+}
+.tooltip2:hover .tooltiptext {
+  visibility: visible;
+}
+.tooltip3 {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip3 .tooltiptext {
+  visibility: hidden;
+  width: 100px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -15px;
+  right: 110%;
+}
+
+.tooltip3 .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent rgb(41, 39, 39);
+}
+.tooltip3:hover .tooltiptext {
+  visibility: visible;
+}
+.btn-secondary {
+background-color:transparent !important;
+border-color: transparent !important;
+}
+img {
+border-bottom: transparent;
+}
+.dropdown1 {
+    position: relative;
+    left: 28px;
+    top: 0px;
+  width: 20px;
+}
+#qs_text{
+  font-size: 14px;
+  font-weight: 300;
+}
+
+#about_dialog {
+  width: 400px;
+  height: 644px;
+  position: relative;
+top: -12px;
+left: -127px;
+  background: #3f3e3ecf;;
+}
+.modal-content {
+ height: 644px;
+ width: 400px;
+ border-radius: 1px;
+}
+
+
+
+#heading_box{
+  width: 400px;
+  height: 40px;
+  position: relative;
+}
+#about_app_heading{
+  left: 10px;
+    top: 20px;
+    position: relative;
+  font-size: large;
+  font-weight: 600;
+  color: #EEF2F4;
+}
+.cross_to_close{
+  width: 16px;
+  height: 16px;
+}
+#close_box{
+  position: relative;
+  left: 367px;
+    top: -2px;
+}
+#about_app_text{
+  position: relative;
+  height: 200px;
+  width: 400px;
+}
+.explain_text{
+  font-size: 12px;
+    padding: 8px;
+  top: 0px;
+    padding-bottom: 10px;
+    left: 2px;
+  position: relative;
+    color: #EEF2F4;
+}
+.heading_blue_text{
+  font-size: 12px;
+  color:#329ffe;
+  top: 6px;
+    left: 10px;
+  position: relative;
+  font-weight: 300;
+}
+#team_details_box{
+  width: 400px;
+  position: relative;
+  height: 100px;
+  top: 130px
+}
+#details_text {
+  font-size: small;
+  color: #bebbbb;
+  font-family:'Times New Roman', Times, serif;
+  position: relative;
+  left: 70px;
+  top: 80px;
+width: 265px;
+}
+#social_links{
+  position: relative;
+    top: 232px;
+    height: 50px;
+    background: rgb(67 67 67);
+}
+
+#akashraj{
+  color: #ffffff;
+  position :relative;
+  top: 95px;
+  left: 50px;
+  font-size: small;
+}
+#preetham{
+  color: #ffffff;
+  position :relative;
+  top: 57px;
+  left: 167px;
+  font-size: small;
+}
+#nidish{
+  color: #ffffff;
+  position :relative;
+  top: 20px;
+  left: 276px;
+  font-size: small;
+}
+#vadiraj{
+  color: #ffffff;
+  position :relative;
+  top: 40px;
+    left: 46px;
+  font-size: small;
+}
+#prathiksha{
+  color: #ffffff;
+  position :relative;
+  top: 5px;
+    left: 157px;
+  font-size: small;
+}
+#shreya{
+  color: #ffffff;
+  position :relative;
+  top: -33px;
+    left: 290px;
+  font-size: small;
+}
+#vl {
+    border-left: 3px solid rgb(71, 93, 219);
+  height: 20px;
+  top: -19px;
+    left: 103px;
+  position: relative;
+}
+#v2 {
+    border-left: 3px solid rgb(71, 93, 219);
+  height: 20px;
+  top: -19px;
+    left: 93px;
+  position: relative;
+}
+#v3 {
+    border-left: 3px solid rgb(71, 93, 219);
+  height: 20px;
+  top: -19px;
+    left: 93px;
+  position: relative;
+}
+#v4 {
+    border-left: 3px solid rgb(71, 93, 219);
+  height: 20px;
+  top: -19px;
+    left: 115px;
+  position: relative;
+}
+
+#linkd_in_box{
+  width: 30px;
+  height: 30px;
+  top: -49px;
+    left: 108px;
+    position: relative;
+}
+.ellipse {
+    width: 27px;
+    height: 27px;
+    -ms-border-radius: 10.11px / 10px;
+    -o-border-radius: 10.11px / 10px;
+    -moz-border-radius: 10.11px / 10px;
+    -webkit-border-radius: 10.11px / 10px;
+    border-radius: 16.11px / 15px;
+    background: rgba(144,146,148,1);
+    top: -13px;
+    position: relative;
+    left: -10px;
+}
+#linked_in_logo{
+  position: relative;
+  left: 0px;
+top: 7px;
+height: 32px;
+width: 30px;
+}
+#yt_box{
+  width: 30px;
+  height: 30px;
+  top: 10px;
+    left: 26px;
+    position: relative;
+}
+#yt_logo{
+  position: relative;
+left: -1px;
+top: 7px;
+height: 34px;
+width: 34px;
+}
+#insta_box{
+  width: 30px;
+  height: 30px;
+  top: -20px;
+    left: 66px;
+    position: relative;
+}
+#insta_logo{
+  position: relative;
+left: -1px;
+top: 7px;
+height: 32px;
+width: 32px;
+}
+#follow_for_more{
+  position: absolute;
+    color: #c4c1c1;
+    top: 17px;
+    left: 152px;
+    font-size: small;
+}
+.dropdown1 {
+    position: relative;
+    left: -6px;
+    top: -2px;
+  width: 30px;
+}
+
+#copyrights {
+ font-size: 14px;
+ color:#8a8383;
+ text-align: center;
+top: 95%;
+left: -2%;
+ position: relative;
+}
+a {
+ color:#007bff;
+ text-decoration:none;
+ background-color:transparent;
+ position: relative;
+left: 15px;
+top: 4px;
+}
+#copyrights > a:nth-child(1) {
+ position: relative;
+ top: -1px;
+ left: -6px;
+}
+#cropImagePop > div:nth-child(1) > div:nth-child(1) {
+ width: 388px;
+height: 430px;
+}
+.modal-body {
+ padding-left: 7.6rem;
+ padding-right:1rem;
+ padding-top:1rem;
+ padding-bottom:1rem;
+left: -1px;
+ top: 20px;
+}
+.modal-footer {
+ display:block !important;
+ /*! left: -1px; */
+ /*! position: relative; */
+}
+.modal-footer {
+ display:block !important;
+}
+.modal-header {
+ display:block !important;
+}
+.modal-body-app{
+left: 126px;
+top: -30px;
+position: relative;
+}
+#cropImagePop > div:nth-child(1) {
+ position: relative;
+ top: 125px;
+}
+.modal.show .modal-dialog {
+ -webkit-transform:none;
+ transform:none;
+ position: relative;
+ top: 50px;
+}
+button.close:nth-child(1) {
+ position: relative;
+ top: 7px;
+}
+
+.tooltip4 {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip4 .tooltiptext {
+  visibility: hidden;
+  width: 100px;
+  font-size:12px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: 59%;
+}
+
+.tooltip4 .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent rgb(41, 39, 39);
+}
+.tooltip4:hover .tooltiptext {
+  visibility: visible;
+}
+</style>
+</head>
+<script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+<body>
+
+
+
+    <div id="chat-container">
+     <div id="search_bar"  >
+
+            </div>
+        <div class="search-container">
+             <div class="createpanel">
+
+            <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" id="defaulthome" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" class="tooltip4"><img src="{{url_for('static',filename='smallchatlogo.png')}}" alt="" id="smalllogo">
+                     <span class="tooltiptext">Go Back</span></a>
+                    </li>
+                    <li role="presentation" ><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" class="tooltip2"> <img src="{{url_for('static',filename='create.png')}}" alt="" >
+                        <span class="tooltiptext">Create Group</span></a></li>
+
+                    </ul>
+            </div>
+             <div id="new-message-container">
+
+  <span class="tooltiptext">Create Room</span>
+  </div>
+
+            <input type="text" id="searchbar" onkeyup="search_member()" placeholder="Search" title="Type in a name" >
+             <div class="searchlog">
+
+             </div>
+        </div>
+
+        <div id="chat-title">
+             <div class="profile"><img src="{{profilepic}}" style="padding-top:25px; border-bottom: none" /><h3>{% if current_user.is_authenticated %} {{ current_user.username }}{% else %}Guest!{% endif %}</h3></div>
+           <span></span>  <p></p>
+
+
+                        <div class="doc">
+           <div class="dropdown">
+
+  <a class="btn btn-secondary dropdown" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <div class="tooltip3"><img src="{{url_for('static',filename='set.png')}}" >
+    <span class="tooltiptext">Options</span></div>
+  </a>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="{{url_for('faq')}}">FAQ</a>
+    <a class="dropdown-item" data-toggle="modal" data-target="#exampleModal">About App</a>
+    <a class="dropdown-item" href="/logout/">Logout</a>
+  </div>
+</div>
+                       </div>
+        </div>
+               <div id="conversation-list">
+
+                  <div class="float-container">
+
+  {% for (img,room) in imgroomlist %}
+                 <ul id="users">
+                    <li class="group">
+                             <a href="/rooms/{{ room._id.room_id }}" style="color:white; text-decoration:none">    <div class="title-text">
+                               <hr class="solid">
+                        <div class="conversation ">
+                      <div class="float-child">
+                            <div class="green">
+                                <img src="{{url_for('static',filename=img)}}" />
+                            </div>
+                          </div>
+                                  <div class="name" >  {{ room.room_name }}</div>
+
+                            </div>
+                              </div>
+                   </a>
+                     </li>
+                 </ul>
+{% endfor %}
+</div>
+        </div>
+
+
+
+        <div id="messages">
+<p id="copyrights">Copyright &copy; <a href="https://www.edathrv.com/" target="_blank">Airmydus Innovations Private Limited 2021 </a></p>
+            <a href="{{url_for('faq')}}" id="go_to_faq" class="tooltip1">
+            <img src="{{url_for('static',filename='qs_mark2.png')}}" id="qs_mark2" >
+            <span class="tooltiptext">FAQ Page</span></a>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home"></div>
+                <div role="tabpanel" class="tab-pane" id="profile">
+
+                        <form method="post" class="form"  action="/index" enctype="multipart/form-data">
+                <div id="imageparent">
+                        <div class="image_container">
+
+                        <img src="" class="gambar img-responsive img-thumbnail" id="item-img-output" style="max-width:233px" />
+
+                        <!--  <span class="tooltiptext">Upload your Profile Picture</span>-->
+
+                        </div>
+
+
+                        <div class="modal fade" id="cropImagePop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"> <img src="{{url_for('static',filename='cross.png')}}" alt=""></span></button>
+                        <h4 class="modal-title" id="myModalLabel">
+                        <?=multiLanguage( "Edit Foto" , "Edit Photo" )?></h4>
+                        </div>
+                        <div class="modal-body">
+                        <div id="upload-demo" class="center-block"></div>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="cropImageBtn">Crop</button>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                         <div class="file-wrapper">
+                        <div class="upload-btn-wrapper">
+                        <button class="btn upload-file font-weight-500">
+                        <span class="upload-btn">
+
+                        Upload Group Cover
+                        </span>
+                        <span class="upload-select-button" id="blankFile">
+
+                        </span>
+                        <span class="success">
+                        <i class="far fa-check-circle text-success"></i>
+                        </span>
+                        </button>
+                        <input type="file" class="item-img file center-block" id="selectfile" name="file" autocomplete="off">
+                        </div>
+                        </div>
+
+                        </div>
+                        <div class="partition"></div>
+
+                        <div id="design_your_own_circle" >
+                        Design your own circle
+                        </div>
+                        <div id="create_account" >
+                        Create Group
+                        </div>
+                        <div class="input-group">
+                        <input type="text" name="room_name" id="room_name" autocomplete="off" required>
+                        <label for="room_name"><span class="iconify" data-icon="zmdi-accounts" data-inline="false"></span> Group Name </label>
+                        </div>
+                        <div class="form-group">
+                        <label for="members">Select members</label><br>
+                        <select name="members" id="members" class="selectpicker"  multiple data-live-search="true">
+                        {% for user in users %}
+                        <option value="{{ user }}">{{ user }}</option>
+                        {% endfor %}
+                        </select>
+                        </div>
+                        <div class="submit_container">
+                        <button type="Submit" class="submit_buttons">Create Room</button>
+                        </div>
+                        </form>
+                </div>
+            </div>
+        </div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+    	      </div>
+      <div class="modal-body-app">
+
+<div id="about_dialog">
+  <div id="heading_box">
+    <div id="about_app_heading">
+      About App
+    </div>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">  	<img src="{{url_for('static',filename='cross.png')}}" class="dropdown1"/></span></button>
+
+  </div>
+  <hr style="width:100%;text-align:left;margin-left:0px">
+  <div id="about_app_text">
+    <div class="explain_text">
+      Athrv Chat App enables you with fast real-time messaging for work teams.
+        Fast.Secure.Synced
+    </div>
+    <div class="heading_blue_text">
+      Privacy Matters
+    </div>
+    <div class="explain_text">
+      End to end encryption of messages and chat backup
+    </div>
+    <div class="heading_blue_text">
+      Get notified effortlessly
+    </div>
+    <div class="explain_text">
+      Stay connected to your group through push notifications.
+    </div>
+    <div class="heading_blue_text">
+      Start collaborating
+    </div>
+    <div class="explain_text">
+      create-update-delete your groups whenever you want with admin access
+    </div>
+    <div class="heading_blue_text">
+      Messaging services
+    </div>
+    <div class="explain_text">
+      Share links, text ,emojis, long messages instantly.
+    </div>
+    <div class="heading_blue_text">
+      Manage your profile with ease
+    </div>
+    <div class="explain_text">
+      upload your profile & group pic with a user friendly interface.
+    </div>
+    <div class="heading_blue_text">
+      User experience
+    </div>
+    <div class="explain_text">
+      Use a desktop view for better experience, and is accessible only to Athrv-ed core members.
+    </div>
+  </div>
+  <div id="team_details_box">
+    <div id="details_text">Developed by Athrv-Ed Web Development team</div>
+    <div id="akashraj"> Akashraj P Bhat<div id="vl"></div></div>
+    <div id="preetham"> Preetham G S<div id="v2"></div></div>
+    <div id="nidish"> Nidish Rao</div>
+    <div id="vadiraj"> Vadiraj Tantry<div id="v3"></div></div>
+    <div id="prathiksha"> Prathiksha Nayak<div id="v4"></div></div>
+    <div id="shreya"> Shreya</div>
+  </div>
+  <div id="social_links">
+    <div id="icon_grp">
+      <div id="yt_box"><a href="https://www.youtube.com/channel/UCYH17wr0nXeP0XzEEnTpYHA" target="_blank">
+        <div class="ellipse">
+          <img src="{{url_for('static',filename='youtube.png')}}" id="yt_logo">
+        </div>
+      </a>
+      </div>
+      <div id="insta_box"><a href="https://www.instagram.com/edathrv/" target="_blank">
+        <div class="ellipse">
+          <img src="{{url_for('static',filename='instagram.png')}}" id="insta_logo">
+        </div>
+      </a>
+      </div>
+      <div id="linkd_in_box"><a href="https://www.linkedin.com/company/athrv-ed/" target="_blank">
+        <div class="ellipse">
+          <img src="{{url_for('static',filename='linkedin.png')}}" id="linked_in_logo">
+        </div>
+      </a>
+      </div>
+    </div>
+    <div id="follow_for_more">Follow us for more updates!</div>
+  </div>
+</div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src='https://foliotek.github.io/Croppie/croppie.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase.js"></script>
+
+<script src="../static/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>
+<script src="../static/firebase.init.js"></script>
+<script>
+    user_key = "{{ user_id }}"
+    const messaging = firebase.messaging();
+    messaging.requestPermission().then(function () {
+        return messaging.getToken();
+    }).then(function (token) {
+        console.log(token)
+        firebase.database().ref('fcmTokens').child(user_key).set({token_value: token});
+    });
+
+</script>
+<script>
+
+    const modal = document.querySelector('#my-modal');
+    const modalBtn = document.querySelector('#modal-btn');
+    const closeBtn = document.querySelector('.closee');
+    modalBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+    window.addEventListener('click', outsideClick);
+    function openModal() {
+      modal.style.display = 'block';
+    }
+    function closeModal() {
+      modal.style.display = 'none';
+    }
+    function outsideClick(e) {
+      if (e.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+
+    </script>
+<script>
+function search_member() {
+    let input = document.getElementById('searchbar').value
+    input=input.toLowerCase();
+    let x = document.getElementsByClassName('group');
+
+    for (i = 0; i < x.length; i++) {
+        if (!x[i].innerHTML.toLowerCase().includes(input)) {
+            x[i].style.display="none";
+        }
+        else {
+            x[i].style.display="list-item";
+        }
+    }
+}
+</script>
+<script>
+    $("#selectfile").bind('change',function(){
+    var filename = $("#selectfile").val();
+    if(/^s*$/.test(filename)){
+        $("#blankFile").text("No File Chosen..");
+        $(".success").hide();
+    }else{
+        $("#blankFile").text(filename.replace("C:\\fakepath\\",""));
+        $(".success").show();
+    }
+})
+</script>
+<script>
+$(".gambar").attr("src", "static/createdef.png");
+                        var $uploadCrop,
+                        tempFilename,
+                        rawImg,
+                        imageId;
+                        function readFile(input) {
+                            if (input.files && input.files[0]) {
+                              var reader = new FileReader();
+                                reader.onload = function (e) {
+                                    $('.upload-demo').addClass('ready');
+                                    $('#cropImagePop').modal('show');
+                                    rawImg = e.target.result;
+                                }
+                                reader.readAsDataURL(input.files[0]);
+                            }
+                            else {
+                                swal("Sorry - you're browser doesn't support the FileReader API");
+                            }
+                        }
+
+                        $uploadCrop = $('#upload-demo').croppie({
+                            viewport: {
+                                width: 150,
+                                height: 150,
+                                type:'circle'
+                            },
+                            enforceBoundary: false,
+                            enableExif: true
+                        });
+                        $('#cropImagePop').on('shown.bs.modal', function(){
+                            //alert('Shown pop');
+                            $uploadCrop.croppie('bind', {
+                                url: rawImg
+                            }).then(function(){
+                                console.log('jQuery bind complete');
+                            });
+                        });
+
+                        $('.item-img').on('change', function () { imageId = $(this).data('id'); tempFilename = $(this).val();
+
+
+
+
+                                                                                                         $('#cancelCropBtn').data('id', imageId); readFile(this); });
+                        $('.cropImageBtn').on('click', function (ev) {
+                            $uploadCrop.croppie('result', {
+                                type: 'base64',
+                                format: 'jpeg',
+                                size: {width: 150, height: 150}
+
+                            }).then(function (resp) {
+                                $('#item-img-output').attr('src', resp);
+                                $('#imagebase64').val(resp);
+                                $('#cropImagePop').modal('hide');
+                                console.log($uploadCrop.croppievvb );
+
+                            });
+                        })
+</script>
+
+<script type="text/javascript">
+    window.onload =function()
+    {
+
+     $.post( "/postmethodload2", {
+    javascript_data3: 'on'
+});
+
+    }
+</script>
+
+<script type="text/javascript">
+document.addEventListener('visibilitychange', function() {
+  if(document.hidden)
+  {
+
+
+       $.post( "/postmethod", {
+    javascript_data: 'off'
+});
+
+}
+
+  else{
+
+
+         $.post( "/postmethod", {
+    javascript_data: 'on'
+});
+    }
+
+})
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+</html>

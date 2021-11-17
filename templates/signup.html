@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel = "icon" href ="/static/mainicon.png" type = "image/x-icon">
+<link rel='stylesheet prefetch' href='https://foliotek.github.io/Croppie/croppie.css'>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+      @media screen and (min-width: 340px) and (max-width: 550px){
+                    div#content-container {
+                            width: 100%;
+                            height: 100%;
+                            left: 0px;
+                            top: 0px;
+                            display: block;
+                            margin-left: auto;
+                            margin-right: auto;
+                            position: relative;
+                        }
+                        div.login-wrapper {
+
+                        width: 100%;
+                        height: 100%;
+                        left: 0%;
+                         }
+
+                div.form {
+
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 0px;
+                    top: -15vh;
+                    border-radius:0px;
+                    right: 0px;
+                }
+
+                div.modal_content {
+                 position: relative;
+                 width: 100%;
+                 top: -81%;
+                 height: 100%;
+                }
+                div.modal_content > form:nth-child(1) {
+                 position: relative;
+                 width: 100%;
+                 top: 0px;
+                 height: 100%;
+                }
+
+                div.form .input-group {
+                    width: 100%;
+                    left: 4px;
+                    top: 17vh;
+                    }
+                div.form .input-group input {
+                   width: 100%;
+                   font-size:13px;
+                    }
+                    div.partition {
+                      display: none;
+                    }
+                    div#arrow_back {
+                     width: 100%;
+                     position: relative;
+                     top: 21px;
+                     left:-29px;
+                    }
+                    div#join_our_community {
+                      top: -13px;
+                      left: 0px;
+                      width: 100%;
+                      text-align: center;
+                      font-size:27px;
+                    }
+                    div#create_account {
+                     top: -35px;
+                      left: 0px;
+                      width: 100%;
+                      text-align: center;
+                    }
+                    div.form .submit-btn {
+
+                        top: 680px;
+
+                        }
+
+                    div#logo img {
+                    max-width: 92px ;
+                    position: relative;
+                    top:0px;
+                    }
+                    div#logo {
+                     width: 100%;
+                     z-index: 1000;
+                     top: 20px;
+                     left: 20px;
+                    position: fixed;
+
+                    }
+                    div.alert-warning {
+                     top: 0px;
+                     position: relative;
+                    }
+                    div.image_container {
+                    top: 183px;
+                    position: relative;
+                    text-align: center;
+                    width:100%;
+                }
+                    img#item-img-output {
+                    border-radius: 50%;
+                    z-index: 1;
+                    width: 126px;
+                    height: 126px;
+                    position: relative;
+                     top: 0px;
+                     left: 0px;
+                    background: transparent;
+                    }
+                    div.file-wrapper {
+                    left: 0px;
+                    height:2vh;
+
+                 }
+                div.upload-btn-wrapper.upload-btn-wrapper input[type=file] {
+                     min-height: 200px;
+                 }
+                     div.upload-btn-wrapper {
+                    height: 191px;
+                    top: -56px;
+                    }
+                 div.input-group #agree-term {
+                  left: -48%;
+                  color: purple;
+                  position:relative;
+                  top:0px;
+                }
+                a.terms {
+                color: #2AA0F7;
+                    left: 17px;
+                    position: relative;
+                  font-size: 12px;
+                  top:-38px;
+                }
+                div.input-group:nth-child(11) {
+                     height: 17px;
+                     width: 100%;
+                    }
+                 div#terms-pw {
+              z-index: -1;
+            background:transparent;
+              opacity: 0;
+            }
+            div#terms-pw .formterm {
+                top: -52vh;
+                  }
+                  div.formterm {
+              width: 100%;
+              }
+              div#termmodal > div:nth-child(1) > div:nth-child(1) {
+                 height: 664px;
+                 width: 100%;
+                 left: -9px;
+                }
+                div#termmodal > div:nth-child(1) {
+             position: relative;
+             top: 44px;
+             width: 100%;
+            }
+            form.formterm #rectangle_118 {
+              width: 142%;
+            }
+                div.input-group:nth-child(11) > span:nth-child(2) > a:nth-child(1) {
+                 text-decoration:none;
+                 position: relative;
+                 top: -51px !important;
+                 left: 10% !important;
+                 font-size: 12px;
+                }
+                div#cropImagePop > div:nth-child(1) {
+                 top: 154px;
+                }
+            div#upload-demo {
+                width: 100%;
+                height: 160%;
+              padding-bottom:157px;
+                margin: auto;
+                left: -40px;
+                position: relative;
+            }
+            button.cropImageBtn {
+            height: 100%;
+            width: 100%;
+            margin-right: 0.4rem;
+            }
+
+    }
+ @media screen  and (min-width: 1000px) and (max-width: 1366px){
+div.login-wrapper {
+left: 330px;
+width: 676px;
+height: 388px;
+top: 9px;
+position: relative;
+}
+div.input-group:nth-child(11) > span:nth-child(2) > a:nth-child(1) {
+                 top: -68px !important;
+                }
+div#logo img {
+max-width: 10% ;
+position: relative;
+top: -628px;
+}
+div.modal-dialog{
+    position: relative;
+    top: 80px;
+}
+div.form .input-group {
+    top: -10vh;
+}
+input#agree-term{
+    top: -60px;
+}
+a.terms{
+    top: -66px;
+}
+
+div#termmodal > div:nth-child(1) {
+ position: relative;
+ top: -24px;;
+
+}
+div#termmodal > div:nth-child(1) > div:nth-child(1) {
+                 height: 676px;
+                 width: 101%;
+                 left: -9px;
+                }
+form.formterm #rectangle_118 {
+              width: 152%;
+            }
+div#group_480{
+top: -558px;
+}
+}
+
+@media screen and (min-width:1380px) and (max-width: 1800px){
+div#logo img {
+max-width: 10% ;
+position: relative;
+top: -742px;
+}
+div#termmodal > div:nth-child(1) {
+ position: relative;
+ top: 180px;
+}
+
+div#termmodal > div:nth-child(1) > div:nth-child(1) {
+                 height: 664px;
+                 width: 101%;
+                 left: -9px;
+}
+
+form.formterm #rectangle_118 {
+              width: 152%;
+}
+div#group_480{
+top:-567px;
+}
+
+div.login-wrapper {
+    left: 382px;
+  width: 676px;
+  height: 388px;
+top: -34px;
+position: relative;
+}
+
+a.terms{
+top:-76px;
+}
+
+input#agree-term{
+top:-69px;
+}
+
+div.modal{
+top:-155px;
+height:120%;
+}
+form.formterm{
+top:-22px;
+}
+}
+
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  overflow:hidden;
+    font-family: sans-serif;
+}
+.bg {
+  /* The image used */
+  background-image: url("static/ILLUS1.gif");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.login-wrapper {
+  left: 619px;
+  width: 676px;
+  height: 388px;
+top: -159px;
+position: relative;
+}
+
+.form {
+  position:fixed;
+  width: 704px;
+  height: 544px ;
+  padding: 80px 40px 40px;
+  background:rgba(34,38,41,0.87);
+  border-radius: 10px;
+  color: rgb(0, 0, 0);
+  box-shadow: 0 15px 25px rgb(0, 0, 0);
+  border-right: 14px red;
+position: relative;
+top: -851px;
+right: -25px;
+}
+
+.formterm {
+  padding: 80px 40px 40px;
+  color: rgb(0, 0, 0);
+  width: 0px;
+  background: rgba(0, 0, 0, 0);
+  height: 665px;
+  position: relative;
+    top: -19px;
+    z-index: 1;
+  left: -122px;
+  }
+
+
+#forgot{
+      text-align: left;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  color: rgb(0, 0, 0);
+}
+.form h2 {
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  color: #000000;
+}
+.form h3 {
+  text-align: right;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  color: #ff0000;
+}
+.form h4 {
+  text-align: right;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+ol.c {
+  list-style-type: upper-roman;
+}
+
+input[type=checkbox]:not(old) + label {
+  display: inline-block;
+  line-height: 1.5em;
+  margin-top: 6px; }
+
+.form .input-group {
+  position: relative;
+  top:-7vh;
+}
+.form .input-group input {
+  width: 47%;
+  padding: 10px 0;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin-bottom: 19px;
+  border: none;
+  border-bottom: 1px solid #888B8D;
+  outline: none;
+  background-color: transparent;
+  color: #909294;
+}
+.form .input-group label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: .3s ease-out;
+  color: #909294;
+    top: 4px;
+  left: 0px;
+  width: 280px;
+  height: 37px;
+  overflow: hidden;
+  font-family: Segoe UI;
+  font-size: 18px;
+  text-align: left;
+
+}
+#join_our_community {
+  top: -65px;
+  left: 134px;
+  position: relative;
+  width: 355px;
+  height: 61px;
+  overflow: hidden;
+  font-family: Segoe UI;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: left;
+  color:#EEF2F4;
+}
+
+
+#create_account {
+ top: -78px;
+  left: 211px;
+  position: relative;
+  width: 160px;
+  height: 44px;
+  overflow: hidden;
+  font-family: Segoe UI;
+  font-size: 22px;
+  text-align: left;
+  color:#C2C6C9;
+}
+
+.form .input-group input:focus + label,
+.form .input-group input:valid + label {
+  transform: translateY(-18px);
+color: #909294;
+  font-size: .8rem;
+}
+.submit-btn {
+  display: block;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  background: linear-gradient(-135.25747173575deg , rgba(24,115,181,1) 0%, rgba(51,159,237,1) 100%);
+  font-size: 18px;
+  color: white;
+  width: 336px;
+  height: 43px;
+  position: absolute;
+  top: 490px;
+    }
+.rule{
+font-size:79%;
+letter-spacing:1px;
+}
+.terms-pw {
+  color: inherit;
+}
+
+#terms-pw {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  z-index: 1;
+  background: rgba(111.56,108.49,108.49,0.48);
+  opacity: 0;
+  transition: 0.6s;
+
+
+}
+#terms-pw:target {
+  height: 113%;
+  opacity: 1;
+}
+.close {
+  position: absolute;
+  right: 1.5rem;
+  top: 0.5rem;
+  font-size: 2rem;
+  font-weight: 19;
+  text-decoration: none;
+  color: #EEF2F4;
+
+}
+.close:hover {
+color: #868383;
+}
+#agree-term{
+  left: -141px;
+  color: purple;
+  position:relative;
+  top:-80px;
+
+}
+#item-img-output {
+    border-radius: 50%;
+    z-index: 1;
+    width: 126px;
+    height: 126px;
+    position: relative;
+top: -519px;
+left: 512px;
+    background: transparent;
+    }
+.terms{
+color: #2AA0F7;
+    left: -275px;
+    position: relative;
+  font-size: 12px;
+  top:-87px;
+}
+.terms > b:nth-child(1) {
+ color: #2AA0F7;
+}
+.modal-dialog {
+ position: relative;
+ top: 308px;
+}
+
+.header{
+  height: 105px;
+  width: 964px;
+}
+.header img{
+  max-width: 190%;
+  max-height: 140%;
+}
+#logo img{
+max-width: 10% ;
+position: relative;
+top: -945px;
+}
+ #panel{
+    display:none;
+  top: 552px;
+  left: 345px;
+  width: 336px;
+  height: 43px;
+}
+
+.image_container .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+    display:block;
+  /* Position the tooltip */
+  position: relative;
+  z-index: 1;
+  top: 85px;
+  left:-10%;
+}
+ .modal-body {
+ padding-left: 7.6rem;
+ padding-right:1rem;
+ padding-top:1rem;
+ padding-bottom:1rem;
+
+}
+
+.image_container:hover .tooltiptext {
+  visibility: visible;
+}
+    label.cabinet{
+	display: block;
+    cursor: pointer;
+    text-align: center;
+    margin-top:-128px;
+    padding-bottom:78px;
+    margin-left:100px;
+    margin-right:100px;
+    margin-bottom:16px;
+    border-radius:50%;
+    position:relative;
+      z-index:1;
+
+}
+.image_container{
+    align-content: center;
+    background:transparent;
+
+}
+
+label.cabinet input.file{
+	position: fixed;
+	height: 100%;
+	width: auto;
+	opacity: 0;
+	-moz-opacity: 0;
+  filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  margin-top:-30px;
+}
+.figclass{
+    align-items: center;
+}
+
+#upload-demo{
+	width: 250px;
+	height: 250px;
+  padding-bottom:25px;
+}
+figure figcaption {
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    width: 100%;
+    padding-left: 9px;
+    padding-bottom: 5px;
+    text-shadow: 0 0 10px #000;
+}
+.gambar img-responsive img-thumbnail {
+ position: absolute;
+
+  left: calc(50% - 50px);
+  width: 100px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+
+}
+
+#profileupload{
+    opacity:0;
+}
+.btnup {
+    background: rgb(0, 118, 252);
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+ .file-wrapper{
+     margin:auto;
+     height:8vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+      position: relative;
+      top: -205px;
+    left: 202px;
+
+ }
+ .upload-btn-wrapper{
+     position: relative;
+     overflow: hidden;
+     display: inline-block;
+     cursor: pointer;
+ }
+ .upload-file{
+     color:#9b9b9b;
+     widows: 173px;
+     height:149px;
+     border-radius: 8px;
+     font-size:15px;
+     cursor: pointer;
+ }
+ .upload-btn-wrapper input[type=file]{
+     width:100%;
+     position: absolute;
+     left:0;
+     right:0;
+     top:0;
+     opacity: 0;
+     cursor: pointer;
+     min-height: 300px;
+ }
+ .success{
+     display:none;
+ }
+ .success i{
+     font-size:22px;
+     margin-left:6px;
+     margin-top:10px;
+     color:#00b665;
+ }
+ .font-50{
+     font-size:50px;
+ }
+ .d-block{
+     display: block;
+ }
+ .btn .upload-file{
+     font-size:13px;
+ }
+ .upload-btn{
+     display: block;
+     font-size:18px;
+     color:rgb(0, 118, 252);
+ }
+.font-50 {
+     font-size:36px;
+ }
+
+.flash_message{
+position: fixed;
+top: 58vh;
+
+}
+.cropImageBtn{
+  display: block;
+  margin-left: auto;
+  border: none;
+  outline: none;
+  background: linear-gradient(-135.25747173575deg , rgba(24,115,181,1) 0%, rgba(51,159,237,1) 100%);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  border-radius: 11px;
+  cursor: pointer;
+}
+
+
+#illus1_1 {
+  top: 0px;
+  left: 277px;
+  width: 1300px;
+  height: 720px;
+position: relative;
+}
+
+.btn{
+
+  padding: 9.75rem .75rem;
+}
+.modal-content {
+background-color: rgba(34,38,41,1);
+}
+
+.modal-footer {
+height: 78px;
+}
+.cropImageBtn {
+height: 40px;
+width: 138px;
+margin-right: 10.4rem;
+}
+  .modal-header {
+border-bottom: 1px solid #222629;
+}
+.cr-slider {
+padding-top: 0px;
+}
+
+#group_477 {
+  top: 0px;
+  left: 8px;
+  width: 306px;
+  height: 569px;
+  position: relative;
+}
+#group_183_ek1 {
+  top: 356px;
+  left: 810px;
+position: relative;
+  width: 306px;
+  height: 13px;
+}
+
+#privacy_policy {
+top: -119px;
+left: -838px;
+position: relative;
+  font-size: 11px;
+  font-weight: bold;
+  width: 65px;
+  height: 20px;
+  overflow: hidden;
+  font-family: Segoe UI;
+  font-style: italic;
+  text-align: left;
+  color:#0188D7;
+}
+
+
+#rectangle_117 {
+  width: 310px;
+  height: 1px;
+  background:rgba(1,136,215,1);
+top: -129px;
+left: -795px;
+position: relative;
+  width: 277px;
+}
+
+#group_182 {
+top: -9px;
+left: 361px;
+position: relative;
+  width: 320px;
+  height: 13px;
+}
+
+#general_guidelines {
+top: -9px;
+left: -394px;
+position: relative;
+  width: 123px;
+  height: 20px;
+  overflow: hidden;
+  font-family: Segoe UI;
+  font-size: 11px;
+  font-weight: bold;
+  font-style: italic;
+  text-align: left;
+  color:#0188D7;
+}
+
+
+#rectangle_117_ek1 {
+top: -19px;
+left: -290px;
+position: relative;
+  width: 221px;
+  height: 1px;
+  background:rgba(1,136,215,1);
+
+}
+
+#group_475 {
+  top: -30px;
+  left: 0px;
+  width: 301px;
+  height: 167px;
+}
+#group_190 {
+  top: 0px;
+  left: 0px;
+  width: 301px;
+  height: 91px;
+position: relative;
+}
+#group_471 {
+  top: 0px;
+  left: 0px;
+  width: 301px;
+  height: 40px;
+}
+#group_473 {
+  top: 0px;
+  left: 0px;
+  width: 301px;
+  height: 40px;
+}
+
+#this_web_application_is_created_and_designed_by_members_of_athrv_ed__and_is_a_property_of_athrv_ed__learning_and_innovation_hub__nmamit__nitte__karnataka_ {
+top: -9px;
+left: -21px;
+position: relative;
+  width: 294px;
+  height: 47px;
+  overflow: hidden;
+  font-family: Segoe UI;
+  font-size: 11px;
+  text-align: left;
+  letter-spacing: 0.4px;
+  color:#EEF2F4;
+}
+
+
+#ellipse_41 {
+  width: 4px;
+  height: 4px;
+  -ms-border-radius: 2px / 2px;
+  -o-border-radius: 2px / 2px;
+  -moz-border-radius: 2px / 2px;
+  -webkit-border-radius: 2px / 2px;
+  border-radius: 2px / 2px;
+  background:rgba(104,106,111,1);
+top: -50px;
+left: -35px;
+position: relative;
+}
+
+#group_472 {
+  top: 52px;
+  left: 0px;
+  width: 264px;
+  height: 39px;
+}
+
+#this_application_works_as_a_athrv_ed_chat_application__hence_it_is_accessible_to_only_the_core_members_of_athrv_ed_ {
+
+  width: 257px;
+  height: 46px;
+  overflow: hidden;
+  font-family: Segoe UI;
+  font-size: 11px;
+  text-align: left;
+  letter-spacing: 0.4px;
+  color:#EEF2F4;
+top: 12px;
+left: -21px;
+position: relative;
+}
+
+
+#ellipse_42 {
+ top: -28px;
+left: -35px;
+position: relative;
+  width: 4px;
+  height: 4px;
+  -ms-border-radius: 2px / 2px;
+  -o-border-radius: 2px / 2px;
+  -moz-border-radius: 2px / 2px;
+  -webkit-border-radius: 2px / 2px;
+  border-radius: 2px / 2px;
+  background:rgba(104,106,111,1);
+}
+
+#group_191 {
+  top: 524px;
+  left: 0px;
+  width: 301px;
+  height: 64px;
+position: relative;
+}
+
+#your_login_is_authorised_by_the_company__and_you_understand_and_accept_that_as_an_operational_administrative_measure_the_company_might_revoke_your_access_to_the_application_without_any_prior_notice_ {
+  width: 288px;
+  height: 92px;
+  overflow: hidden;
+  font-family: Segoe UI;
+  text-align: left;
+  letter-spacing: 0.4px;
+  color:#EEF2F4;
+top: -503px;
+left: -21px;
+position: relative;
+  font-size: 11px;
+}
+
+
+#ellipse_41_ek1 {
+top: -587px;
+left: -35px;
+position: relative;
+  width: 4px;
+  height: 4px;
+  -ms-border-radius: 2px / 2px;
+  -o-border-radius: 2px / 2px;
+  -moz-border-radius: 2px / 2px;
+  -webkit-border-radius: 2px / 2px;
+  border-radius: 2px / 2px;
+  background:rgba(104,106,111,1);
+}
+
+#group_476 {
+  top: 280px;
+  left: 0px;
+  width: 301px;
+  height: 289px;
+}
+#group_195 {
+  top: 222px;
+  left: 0px;
+  width: 301px;
+  height: 67px;
+  opacity: 0;
+}
+
+#by_agreeing_to_the_terms_and_conditions_you_agree_that_you_are_a_registered_member_of_athrv_ed__p_s___please_note_without_accepting_the_terms_and_conditions_you_will_not_be_able_to_register_as_a_user_to_the_application_ {
+  top: 0px;
+  left: 12px;
+  width: 294px;
+  height: 74px;
+  overflow: hidden;
+  font-family: Segoe UI;
+  font-size: 10px;
+  text-align: left;
+  letter-spacing: 0.4px;
+  color:#EEF2F4;
+}
+
+
+#ellipse_41_ek2 {
+  top: 5px;
+  left: 0px;
+  width: 4px;
+  height: 4px;
+  -ms-border-radius: 2px / 2px;
+  -o-border-radius: 2px / 2px;
+  -moz-border-radius: 2px / 2px;
+  -webkit-border-radius: 2px / 2px;
+  border-radius: 2px / 2px;
+  background:rgba(104,106,111,1);
+}
+
+#group_191_ek1 {
+  top: 0px;
+  left: 0px;
+  width: 301px;
+  height: 67px;
+}
+
+#the_data_entered_in_the_application_is_visible_only_to_the_members_of_the_company__in_no_ways_the_company_support_or_encourage_the_breach_of_your_privacy__any_private_information_entered_will_be_processed_only_with_the_user_s_acknowledgement_ {
+top: 0px;
+left: -21px;
+position: relative;
+  width: 294px;
+  height: 82px;
+  overflow: hidden;
+  font-family: Segoe UI;
+  font-size: 11px;
+  text-align: left;
+  letter-spacing: 0.4px;
+  color:#EEF2F4;
+}
+
+
+#ellipse_41_ek3 {
+top: -76px;
+left: -35px;
+position: relative;
+  width: 4px;
+  height: 4px;
+  -ms-border-radius: 2px / 2px;
+  -o-border-radius: 2px / 2px;
+  -moz-border-radius: 2px / 2px;
+  -webkit-border-radius: 2px / 2px;
+  border-radius: 2px / 2px;
+  background:rgba(104,106,111,1);
+}
+
+#group_194 {
+  top: 156px;
+  left: 0px;
+  width: 301px;
+  height: 54px;
+}
+
+#by_agreeing_to_the_terms_and_conditions__you_understand_and_ensure_that_you_will_not_misuse_the_application_in_any_means_possible_and_that_you_will_use_it_only_for_the_tasks_and_work_related_to_the_company_ {
+top: 111px;
+left: -21px;
+position: relative;
+  height: 96px;
+  font-size: 11px;
+  width: 294px;
+  overflow: hidden;
+  font-family: Segoe UI;
+  font-size: 11px;
+  text-align: left;
+  letter-spacing: 0.4px;
+  color:#EEF2F4;
+
+}
+
+
+#ellipse_41_ek4 {
+top: 22px;
+left: -35px;
+position: relative;
+  width: 4px;
+  height: 4px;
+  -ms-border-radius: 2px / 2px;
+  -o-border-radius: 2px / 2px;
+  -moz-border-radius: 2px / 2px;
+  -webkit-border-radius: 2px / 2px;
+  border-radius: 2px / 2px;
+  background:rgba(104,106,111,1);
+}
+
+#group_193 {
+  top: 79px;
+  left: 0px;
+  width: 301px;
+  height: 65px;
+}
+
+#by_agreeing_to_the_terms_and_condition_you_assure_that_any_information_entered_by_you_is_true_and_is_to_the_best_of_your_knowledge___you_may_be_asked_to_provide_documentation_proof_for_the_qualifications_you_entered_on_the_application__ {
+top: -31px;
+left: -21px;
+position: relative;
+  height: 82px;
+  font-size: 11px;
+  width: 294px;
+  overflow: hidden;
+  font-family: Segoe UI;
+  text-align: left;
+  letter-spacing: 0.4px;
+  color:#EEF2F4;
+}
+
+
+#ellipse_41_ek5 {
+top: -107px;
+left: -35px;
+position: relative;
+  width: 4px;
+  height: 4px;
+  -ms-border-radius: 2px / 2px;
+  -o-border-radius: 2px / 2px;
+  -moz-border-radius: 2px / 2px;
+  -webkit-border-radius: 2px / 2px;
+  border-radius: 2px / 2px;
+  background:rgba(104,106,111,1);
+}
+
+#group_474 {
+  top: 0px;
+  left: 0px;
+  width: 379px;
+  height: 35px;
+}
+
+#terms___condition {
+  width: 135px;
+  height: 28px;
+  overflow: hidden;
+  font-family: Segoe UI;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: left;
+  color:#EEF2F4;
+position: relative;
+left: -21px;
+top: -45px;
+}
+
+
+#february_13__2021 {
+top: -47px;
+left: -21px;
+position: relative;
+  width: 144px;
+  height: 19px;
+  overflow: hidden;
+  font-family: Segoe UI;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: left;
+  color:#909294;
+}
+
+#clear {
+  top: 0px;
+  left: 285px;
+  width: 20px;
+  height: 20px;
+}
+
+#vector_ek2 {
+top: -70px;
+left: 267px;
+position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+
+#_vector_ek3 {
+  top: 4.17px;
+  left: 4.17px;
+  width: 11.67px;
+  height: 11.67px;
+  opacity: 0;
+}
+
+
+#group_480 {
+top: -570px;
+left: -823px;
+position: relative;
+  width: 393px;
+  height: 32px;
+}
+
+#rectangle_118 {
+  top: 642px;
+  left: 775px;
+  width: 353px;
+  height: 32px;
+  background:rgba(45,48,50,1);
+position: relative;
+}
+
+#footer {
+  left: 904px;
+  width: 237px;
+  height: 20px;
+top: 618px;
+position: relative;
+}
+#group_187 {
+  top: 659px;
+left: 786px;
+position: relative;
+  width: 74.77px;
+  height: 20px;
+}
+#group_184 {
+top: -662px;
+left: -828px;
+position: relative;
+  width: 20.21px;
+  height: 20px;
+}
+
+#ellipse_40 {
+  top: 0px;
+  left: 0px;
+  width: 20.21px;
+  height: 20px;
+  -ms-border-radius: 10.1px / 10px;
+  -o-border-radius: 10.1px / 10px;
+  -moz-border-radius: 10.1px / 10px;
+  -webkit-border-radius: 10.1px / 10px;
+  border-radius: 10.1px / 10px;
+  background:rgba(144,146,148,1);
+}
+
+
+#rectangle_119 {
+top: -24px;
+position: relative;
+left: 3px;
+width: 13px;
+height: 13px;
+}
+
+#group_185 {
+top: -682px;
+left: -857px;
+position: relative;
+  width: 20.21px;
+  height: 20px;
+}
+
+#ellipse_40_ek1 {
+  top: 0px;
+  left: 0px;
+  width: 20.21px;
+  height: 20px;
+  -ms-border-radius: 10.1px / 10px;
+  -o-border-radius: 10.1px / 10px;
+  -moz-border-radius: 10.1px / 10px;
+  -webkit-border-radius: 10.1px / 10px;
+  border-radius: 10.1px / 10px;
+  background:rgba(144,146,148,1);
+}
+
+
+#rectangle_119_ek1 {
+top: -24px;
+left: 3px;
+position: relative;
+width: 13px;
+height: 13px;
+}
+
+#group_186 {
+top: -702px;
+left: -889px;
+position: relative;
+  width: 20.21px;
+  height: 20px;
+}
+
+#ellipse_40_ek2 {
+  top: 0px;
+  left: 0px;
+  width: 20.21px;
+  height: 20px;
+  -ms-border-radius: 10.1px / 10px;
+  -o-border-radius: 10.1px / 10px;
+  -moz-border-radius: 10.1px / 10px;
+  -webkit-border-radius: 10.1px / 10px;
+  border-radius: 10.1px / 10px;
+  background:rgba(144,146,148,1);
+}
+
+
+#rectangle_119_ek2 {
+top: -23px;
+left: 4px;
+width: 13px;
+height: 13px;
+position: relative;
+}
+
+
+#follow_us_for_more_updates_ {
+  width: 159px;
+  height: 20px;
+  overflow: hidden;
+  font-family: Segoe UI;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: left;
+  letter-spacing: 0.4px;
+  color:#C2C6C9;
+  top: -21px;
+position: relative;
+}
+.partition {
+  border-left: 2px solid #909294;
+  height: 500px;
+  position: absolute;
+  margin-left: -3px;
+  height: 328px;
+    left: 59%;
+    top: 128px;
+}
+.dropdown1 {
+ position: relative;
+ top: 19px;
+ width: 23px;
+}
+#arrow_back {
+ width: 35px;
+ position: relative;
+ top: -29px;
+ left: -10px;
+}
+.alert {
+    position: relative;
+    top: 15px !important;
+    left: -50px !important;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+.Header {
+height: 105px;
+width: 494px;
+position: relative;
+top: -1002px;
+z-index: 1;
+}
+.Header img{
+  max-height: 100%;
+}
+#go_to_features{
+  height: 42px;
+    width: 42px;
+    position: fixed;
+    top: 695px;
+    left: 1485px
+}
+div.input-group:nth-child(11) > span:nth-child(2) > a:nth-child(1) {
+ text-decoration:none;
+ position: relative;
+ top: -88px;
+ left: -166%;
+ font-size: 12px;
+}
+div.input-group:nth-child(11) > span:nth-child(2) > a:nth-child(1) > p:nth-child(1) {
+ top: 19px;
+ position: relative;
+}
+div.input-group:nth-child(11) > span:nth-child(2) > a:nth-child(1) > b:nth-child(2) {
+ position: relative;
+ left: 170px;
+ top: -20px;
+}
+#termmodal > div:nth-child(1) {
+ position: relative;
+ top: 40px;
+}
+#termmodal > div:nth-child(1) {
+ position: relative;
+ top: 44px;
+ width: 352px;
+}
+.modal-body {
+overflow: hidden;
+}
+#termmodal > div:nth-child(1) > div:nth-child(1) {
+ height: 664px;
+}
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+button:not(:disabled) {
+ outline: 0 !important;
+}
+
+   </style>
+
+  <title>Athrv-Ed Chat Application</title>
+</head><script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+<body>
+<div class="bg"></div>
+<div id="logo" >
+     <img src="https://athrved.com/img/Logo/athrvedlogo.png.png ">
+</div>
+
+<div id="content-container" >
+
+
+
+  <div class="login-wrapper">
+        <div class="modal_content">
+    <form method="post"  action="/signup" enctype="multipart/form-data">
+
+
+
+
+<div class="image_container">
+
+ <img src="" class="gambar img-responsive img-thumbnail" id="item-img-output" />
+
+<!--  <span class="tooltiptext">Upload your Profile Picture</span>-->
+
+</div>
+
+
+<div class="modal fade" id="cropImagePop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						  <div class="modal-dialog">
+						    <div class="modal-content">
+							<div class="modal-header">
+							  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">   <img src="{{url_for('static',filename='cross.png')}}" /></span></button>
+							  <h4 class="modal-title" id="myModalLabel">
+							  	<?=multiLanguage( "Edit Foto" , "Edit Photo" )?></h4>
+							</div>
+							<div class="modal-body">
+				            <div id="upload-demo" class="center-block"></div>
+				      </div>
+							 <div class="modal-footer">
+
+        <button type="button" class="cropImageBtn">Crop</button>
+      </div>
+						    </div>
+						  </div>
+						</div>
+
+
+<div class="form">
+		<div id="arrow_back"  >
+            <a href="{{url_for('login')}}">
+			<div id="arrow_back_background">
+				<img src="{{url_for('static',filename='_vector_ek11.png')}}" id="vector_ek10" />
+			</div></a>
+		</div>
+
+   <div id="join_our_community" >
+              JOIN OUR COMMUNITY
+            </div>
+            <div id="create_account" >
+              Create Account
+            </div>
+
+
+
+
+      <div class="input-group">
+            <input type="text" name="user_id" id="user_id" autocomplete="off" required>
+            <label for="user_id"><span class="iconify" data-icon="bx:bxs-user" data-inline="false"></span> ATHRVED USER ID</label>
+          </div>
+         <div class="input-group">
+            <input type="text" name="username" id="username" autocomplete="off" required>
+            <label for="username"><span class="iconify" data-icon="bx:bxs-user" data-inline="false"></span>   USERNAME</label>
+          </div>
+          <div class="input-group">
+                <input type="text" name="email" id="email" autocomplete="off" required>
+                <label for="email"><span class="iconify" data-icon="zmdi-email" data-inline="false"></span>   REGISTERED EMAIL ID </label>
+              </div>
+      <div class="input-group">
+        <input type="password" name="password" id="password" required>
+        <label for="password"><span class="iconify" data-icon="zmdi-lock" data-inline="false"></span>   PASSWORD</label>
+      </div>
+      <div class="input-group">
+        <input type="password" name="re_pass" id="re_pass" required/>
+        <label for="re_pass"><span class="iconify" data-icon="zmdi-lock-outline" data-inline="false"></span>  CONFIRM PASSWORD</label>
+      </div>
+<div class="partition"></div>
+  <div class="file-wrapper">
+      <div class="upload-btn-wrapper">
+          <button class="btn upload-file font-weight-500">
+              <span class="upload-btn">
+
+                        Upload Your Avatar
+              </span>
+              <span class="upload-select-button" id="blankFile">
+
+              </span>
+              <span class="success">
+                <i class="far fa-check-circle text-success"></i>
+              </span>
+          </button>
+          <input type="file" class="item-img file center-block" id="selectfile" name="file" autocomplete="off">
+      </div>
+  </div>
+
+
+     <div class="input-group">
+
+         <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" onclick="termcheck()" /><span>     <a href="#terms-pw"  data-toggle="modal" data-target="#termmodal" style="text-decoration:none"> <p style="color: #FFF">By registering you agree to the</p> <b>
+TERMS & CONDITIONS</b>
+</a></span>
+         <br>
+        </div>
+
+
+        <div id="panel"><input type="submit" value="Register"  class="submit-btn"></div>
+        <br>
+        <div class=flash_message>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-warning alert-dismissible">
+                          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                  {{ message }}
+                                </div>
+                    {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+</div>
+    </form>
+  </div>
+
+
+
+
+<div class="modal fade" id="termmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">  	<img src="{{url_for('static',filename='cross.png')}}" class="dropdown1"/></span></button>
+
+      <form action="" class="formterm">
+
+
+          <div id="group_474"  >
+              <div id="terms___condition" >
+                Terms &amp; Condition
+              </div>
+              <div id="february_13__2021" >
+                Fast.Secure.Synced
+              </div>
+            </div>
+        <div id="group_477"  >
+
+            <div id="group_183_ek1"  >
+              <div id="privacy_policy" >
+                Privacy Policy
+              </div>
+              <div id="rectangle_117"  ></div>
+
+            </div>
+
+            <div id="group_182"  >
+              <div id="general_guidelines" >
+                General Guidelines
+              </div>
+              <div id="rectangle_117_ek1"  ></div>
+
+            </div>
+
+            <div id="group_475"  >
+
+              <div id="group_190"  >
+
+                <div id="group_471"  >
+
+                  <div id="group_473"  >
+                    <div id="this_web_application_is_created_and_designed_by_members_of_athrv_ed__and_is_a_property_of_athrv_ed__learning_and_innovation_hub__nmamit__nitte__karnataka_" >
+                      This Web Application is created and designed by members of AthrV-Ed, and is a property of Athrv-Ed, Learning and Innovation Hub, NMAMIT, Nitte, Karnataka.<br/>
+                    </div>
+                    <div id="ellipse_41"  ></div>
+
+                  </div>
+
+                </div>
+
+                <div id="group_472"  >
+                  <div id="this_application_works_as_a_athrv_ed_chat_application__hence_it_is_accessible_to_only_the_core_members_of_athrv_ed_" >
+                    This application works as a Athrv-Ed chat application, hence it is accessible to only the core members of Athrv-Ed.<br/>
+                  </div>
+                  <div id="ellipse_42"  ></div>
+
+                </div>
+
+              </div>
+
+              <div id="group_191"  >
+                <div id="your_login_is_authorised_by_the_company__and_you_understand_and_accept_that_as_an_operational_administrative_measure_the_company_might_revoke_your_access_to_the_application_without_any_prior_notice_" >
+                  Your login is authorised by the company, and you understand and accept that as an operational/administrative measure the company might revoke your access to the application without any prior notice.<br/>
+                </div>
+                <div id="ellipse_41_ek1"  ></div>
+
+              </div>
+
+            </div>
+
+            <div id="group_476"  >
+
+              <div id="group_195"  >
+                <div id="by_agreeing_to_the_terms_and_conditions_you_agree_that_you_are_a_registered_member_of_athrv_ed__p_s___please_note_without_accepting_the_terms_and_conditions_you_will_not_be_able_to_register_as_a_user_to_the_application_" >
+                  <br/>By Agreeing to the terms and conditions you agree that you are a registered member of Athrv-Ed.<br/><br/>P.S <span class="char">%E2%80%93 </span> Please note without accepting the terms and conditions you will not be able to register as a user to the application.
+                </div>
+                <div id="ellipse_41_ek2"  ></div>
+
+              </div>
+
+              <div id="group_191_ek1"  >
+                <div id="the_data_entered_in_the_application_is_visible_only_to_the_members_of_the_company__in_no_ways_the_company_support_or_encourage_the_breach_of_your_privacy__any_private_information_entered_will_be_processed_only_with_the_user_s_acknowledgement_" >
+                   The data entered in the application is visible only to the members of the company. In no ways the company support or encourage the breach of your privacy. Any private information entered will be processed only with the user's acknowledgement.<br/>
+                </div>
+                <div id="ellipse_41_ek3"  ></div>
+
+              </div>
+
+              <div id="group_194"  >
+                <div id="by_agreeing_to_the_terms_and_conditions__you_understand_and_ensure_that_you_will_not_misuse_the_application_in_any_means_possible_and_that_you_will_use_it_only_for_the_tasks_and_work_related_to_the_company_" >
+                  By agreeing to the terms and conditions, you understand and ensure that you will not misuse the application in any means possible and that you will use it only for the tasks and work related to the company.<br/>
+                </div>
+                <div id="ellipse_41_ek4"  ></div>
+
+              </div>
+
+              <div id="group_193"  >
+                <div id="by_agreeing_to_the_terms_and_condition_you_assure_that_any_information_entered_by_you_is_true_and_is_to_the_best_of_your_knowledge___you_may_be_asked_to_provide_documentation_proof_for_the_qualifications_you_entered_on_the_application__" >
+                  By agreeing to the terms and condition you assure that any information entered by you is true and is to the best of your knowledge. (You may be asked to provide documentation proof for the qualifications you entered on the application).<br/>
+                </div>
+                <div id="ellipse_41_ek5"  ></div>
+
+              </div>
+                    <div id="group_480"  >
+            <div id="rectangle_118"  ></div>
+
+            <div id="footer"  >
+
+              <div id="group_187"  >
+
+                <div id="group_184"  >
+                  <div id="ellipse_40"  ></div>
+                      <a href="https://www.linkedin.com/company/athrv-ed/" target="_blank"><img src="{{url_for('static',filename='linkedin.png')}}"  id="rectangle_119"/></a>
+
+                </div>
+
+                <div id="group_185"  >
+                  <div id="ellipse_40_ek1"  ></div>
+                     <a href="https://www.instagram.com/edathrv/" target="_blank"><img src="{{url_for('static',filename='instagram.png')}}"  id="rectangle_119_ek1"/></a>
+
+                </div>
+
+                <div id="group_186"  >
+                  <div id="ellipse_40_ek2"  ></div>
+                   <a href="https://www.youtube.com/channel/UCYH17wr0nXeP0XzEEnTpYHA" target="_blank"><img src="{{url_for('static',filename='youtube.png')}}"  id="rectangle_119_ek2" /></a>
+
+                </div>
+
+              </div>
+              <div id="follow_us_for_more_updates_" >
+                Follow us for more updates!
+              </div>
+
+            </div>
+                    </div></div>
+          </div>
+
+      </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+        </div>
+
+
+  </div>
+</body>
+<script src="static/validation.js"></script>
+<script>
+function termcheck() {
+  var t = document.getElementById("panel");
+  if(t.style.display == "block"){
+    t.style.display = "none";
+  } else {
+    t.style.display = "block";
+  }
+}
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src='https://foliotek.github.io/Croppie/croppie.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
+<script>
+$(".gambar").attr("src", "static/defaultprofile.png" );
+						var $uploadCrop,
+						tempFilename,
+						rawImg,
+						imageId;
+						function readFile(input) {
+				 			if (input.files && input.files[0]) {
+				              var reader = new FileReader();
+					            reader.onload = function (e) {
+									$('.upload-demo').addClass('ready');
+									$('#cropImagePop').modal('show');
+						            rawImg = e.target.result;
+					            }
+					            reader.readAsDataURL(input.files[0]);
+					        }
+					        else {
+						        swal("Sorry - you're browser doesn't support the FileReader API");
+						    }
+						}
+
+						$uploadCrop = $('#upload-demo').croppie({
+							viewport: {
+								width: 150,
+								height: 150,
+								type:'circle'
+							},
+							enforceBoundary: false,
+							enableExif: true
+						});
+						$('#cropImagePop').on('shown.bs.modal', function(){
+							//alert('Shown pop');
+							$uploadCrop.croppie('bind', {
+				        		url: rawImg
+				        	}).then(function(){
+				        		console.log('jQuery bind complete');
+				        	});
+						});
+
+						$('.item-img').on('change', function () { imageId = $(this).data('id'); tempFilename = $(this).val();
+																										 $('#cancelCropBtn').data('id', imageId); readFile(this); });
+						$('.cropImageBtn').on('click', function (ev) {
+							$uploadCrop.croppie('result', {
+								type: 'base64',
+								format: 'jpeg',
+								size: {width: 150, height: 150}
+
+							}).then(function (resp) {
+								$('#item-img-output').attr('src', resp);
+								$('#imagebase64').val(resp);
+								$('#cropImagePop').modal('hide');
+								console.log($uploadCrop.croppievvb );
+
+							});
+						})
+</script>
+
+
+<script>
+    $("#selectfile").bind('change',function(){
+    var filename = $("#selectfile").val();
+    if(/^s*$/.test(filename)){
+        $("#blankFile").text("No File Chosen..");
+        $(".success").hide();
+    }else{
+        $("#blankFile").text(filename.replace("C:\\fakepath\\",""));
+        $(".success").show();
+    }
+})
+</script>
+</html>
